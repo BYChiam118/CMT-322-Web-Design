@@ -1,0 +1,74 @@
+/* MutiaraLink prototype: shared styles (sample data only) */
+body{margin:0;font-family:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;color:#14302d;background:#f4f7f6}
+*{box-sizing:border-box}
+a{color:#0b5f58}a:hover{color:#083f3b}
+h1,h2,h3{line-height:1.2}
+
+/* header and navigation */
+.top{background:#fff;border-bottom:1px solid #d5e0dd}
+.bar{max-width:1200px;margin:0 auto;padding:12px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 32px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;color:#0b5f58;text-decoration:none}
+.nav{display:flex;flex-wrap:wrap;gap:4px;flex:1}
+.nav a{padding:0 14px;border-radius:8px;color:#14302d;text-decoration:none;font-weight:500;min-height:44px;display:inline-flex;align-items:center}
+.nav a:hover{background:#e7f1ef}
+.nav a[aria-current]{background:#d3ebe7;color:#083f3b;font-weight:700}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 20px;border-radius:8px;background:#0f766e;color:#fff;font:inherit;font-weight:600;text-decoration:none;border:0;cursor:pointer}
+.btn:hover{background:#0b5f58;color:#fff}
+.btn.ghost{background:#fff;color:#0b5f58;border:1.5px solid #0f766e}
+.btn.ghost:hover{background:#e7f1ef;color:#083f3b}
+
+/* layout and cards */
+.wrap{max-width:1200px;margin:0 auto;padding:32px 24px}
+.card{background:#fff;border:1px solid #d5e0dd;border-radius:12px;padding:24px}
+.grid4{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:16px}
+.qcard{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:#14302d;background:#fff;border:1px solid #d5e0dd;border-radius:12px;padding:20px}
+.qcard:hover{border-color:#0f766e;background:#f0f8f6;color:#14302d}
+
+/* tags */
+.tag{display:inline-block;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:600;white-space:nowrap}
+.tag.warn{background:#fef3c7;color:#7c3a06}
+.tag.info{background:#dbeafe;color:#1e40af}
+.tag.ok{background:#d1fae5;color:#065f46}
+.tag.grey{background:#e5e7eb;color:#1f2937}
+
+/* filter chips and list items */
+.chip{min-height:44px;padding:0 18px;border-radius:999px;border:1.5px solid #9db8b3;background:#fff;color:#14302d;font:inherit;font-weight:500;cursor:pointer}
+.chip:hover{background:#e7f1ef}
+.chip.on{background:#0f766e;border-color:#0f766e;color:#fff;font-weight:600}
+.item{display:flex;flex-direction:column;gap:2px;text-align:left;width:100%;min-height:44px;padding:12px 14px;border-radius:10px;border:1.5px solid #c3d4d0;background:#fff;color:#14302d;font:inherit;cursor:pointer}
+.item:hover{background:#eef6f4}
+.item.on{border-color:#0f766e;background:#e3f2ef;box-shadow:inset 4px 0 0 #0f766e}
+
+/* forms */
+.row{display:flex;flex-wrap:wrap;gap:16px}
+.field{display:flex;flex-direction:column;gap:6px;flex:1 1 240px;min-width:0}
+.field label{font-weight:600}
+.field input,.field select,.field textarea{width:100%;min-height:44px;padding:10px 12px;border:1.5px solid #7f9c97;border-radius:8px;background:#fff;color:#14302d;font:inherit}
+.field textarea{min-height:130px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid #99d5cd;border-color:#0f766e}
+.hint{font-size:14px;color:#4b5a57}
+
+/* ticket progress */
+.step{flex:1 1 150px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.step .line{display:flex;align-items:center}
+.step .rule{flex:1;height:4px;background:#0f766e;border-radius:2px}
+.step .rule.off{background:#c3d4d0}
+.dot{flex:none;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+.dot.done{background:#0f766e}
+.dot.now{background:#fff;border:5px solid #0f766e}
+.dot.next{background:#e3ebe9;border:2px solid #9db8b3}
+
+/* tables */
+table{width:100%;border-collapse:collapse;min-width:560px}
+th,td{padding:12px 10px;text-align:left;border-bottom:1px solid #e1e9e7;vertical-align:middle}
+th{font-size:14px;color:#4b5a57;font-weight:600}
+.sr-only{position:absolute;left:-9999px}
+
+/* footer */
+.foot{border-top:1px solid #d5e0dd;background:#fff;margin-top:40px}
+.foot div{max-width:1200px;margin:0 auto;padding:20px 24px;font-size:14px;color:#4b5a57;display:flex;flex-wrap:wrap;gap:8px 24px}
+[hidden]{display:none !important}

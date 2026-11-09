@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MutiaraLink Staff dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+<header class="top"><div class="bar">
+<a class="brand" href="index.html"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b5f58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14.5" r=".8"/><circle cx="15" cy="14.5" r=".8"/><path d="M8 21l2-4M16 21l-2-4"/></svg><span>MutiaraLink</span></a>
+<nav class="nav" aria-label="Main">
+<a href="index.html">Home</a>
+<a href="notices.html">Notices</a>
+<a href="map.html">Closure map</a>
+<a href="feedback.html">Feedback</a>
+<a href="track.html">Track ticket</a>
+</nav>
+<div style="display:flex;flex-wrap:wrap;align-items:center;gap:12px"><span style="font-size:14px;color:#33504c">Signed in as Contractor team (sample)</span><a class="btn ghost" href="index.html">Log out</a></div>
+</div></header>
+
+<section class="wrap" style="padding-bottom:8px">
+<span class="tag info" style="margin-bottom:12px">Staff view</span>
+<h1 style="margin:8px 0 8px;font-size:40px;letter-spacing:-0.02em">Staff dashboard</h1>
+<p style="margin:0;font-size:18px;color:#33504c;max-width:680px;line-height:1.5">Review public feedback tickets and publish notices.</p>
+</section>
+
+<section class="wrap" style="padding-top:20px;display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start">
+<div class="card" style="flex:2 1 620px;min-width:0">
+<h2 style="margin:0 0 14px;font-size:22px">Feedback tickets</h2>
+<div id="chips" role="group" aria-label="Filter by status" style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px"></div>
+<div style="overflow-x:auto">
+<table>
+<thead><tr><th scope="col">Ticket</th><th scope="col">Category</th><th scope="col">Area</th><th scope="col">Status</th><th scope="col">Submitted</th><th scope="col"><span class="sr-only">Action</span></th></tr></thead>
+<tbody id="rows"></tbody>
+</table>
+</div>
+</div>
+
+<div class="card" style="flex:1 1 340px;min-width:0">
+<h2 style="margin:0 0 14px;font-size:22px">Publish a notice</h2>
+<div id="done" role="status" hidden style="background:#d1fae5;color:#065f46;border-radius:10px;padding:14px 16px;font-weight:600;margin-bottom:16px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center">Notice published (sample).<a href="notices.html" style="color:#065f46">View notices</a></div>
+<form id="notice-form" style="display:flex;flex-direction:column;gap:16px">
+<div class="field"><label for="nt">Title</label><input id="nt" type="text" placeholder="Lane closure on [ROAD NAME]"></div>
+<div style="display:flex;flex-wrap:wrap;gap:16px">
+<div class="field" style="flex-basis:150px"><label for="na">Area</label><select id="na"><option>Area A</option><option>Area B</option><option>Area C</option></select></div>
+<div class="field" style="flex-basis:150px"><label for="ny">Type</label><select id="ny"><option>Road closure</option><option>Pedestrian access</option><option>Construction schedule</option><option>Business access</option></select></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:16px">
+<div class="field" style="flex-basis:150px"><label for="ns">Start date</label><input id="ns" type="date"></div>
+<div class="field" style="flex-basis:150px"><label for="ne">End date</label><input id="ne" type="date"></div>
+</div>
+<div class="field"><label for="nm">Message</label><textarea id="nm" style="min-height:110px" placeholder="What is changing, and what should people do?"></textarea></div>
+<div><button type="button" id="publish" class="btn">Publish notice</button></div>
+</form>
+</div>
+</section>
+
+<footer class="foot"><div><span>MutiaraLink: community information and feedback platform</span></div></footer>
+<script src="js/app.js"></script>
+</body>
+</html>

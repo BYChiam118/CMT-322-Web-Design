@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MutiaraLink Home</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+<header class="top"><div class="bar">
+<a class="brand" href="index.html"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b5f58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14.5" r=".8"/><circle cx="15" cy="14.5" r=".8"/><path d="M8 21l2-4M16 21l-2-4"/></svg><span>MutiaraLink</span></a>
+<nav class="nav" aria-label="Main">
+<a href="index.html" aria-current="page">Home</a>
+<a href="notices.html">Notices</a>
+<a href="map.html">Closure map</a>
+<a href="feedback.html">Feedback</a>
+<a href="track.html">Track ticket</a>
+</nav>
+<a class="btn ghost" href="dashboard.html">Staff login</a>
+</div></header>
+
+<div class="alert" role="region" aria-label="Urgent notice"><div class="wrap">
+<svg class="alert-ico" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v5M12 18v.01"/></svg>
+<p><strong>Road closure:</strong> Jalan Contoh 1 is closed from 2 Nov to 13 Nov. Use Jalan Contoh 2 as the detour.</p>
+<a href="map.html">See the map <span aria-hidden="true">→</span></a>
+</div></div>
+
+<section class="hero"><div class="wrap">
+<div class="hero-text">
+<p class="eyebrow"><span class="pulse" aria-hidden="true"></span>Penang LRT Mutiara Line construction updates</p>
+<h1>Know what is closed <span>before you leave home.</span></h1>
+<p class="lead">Notices, road closures and detours in one place, plus a way to raise a concern and follow it until it is answered.</p>
+<div class="hero-cta">
+<a class="btn lg" href="map.html">View closure map</a>
+<a class="btn ghost lg" href="feedback.html">Give feedback</a>
+</div>
+<form class="qtrack" action="track.html" method="get">
+<label for="q-tid">Already reported something?</label>
+<div><input id="q-tid" name="tid" type="text" placeholder="Ticket number, e.g. MUT-0001" autocomplete="off"><button class="btn" type="submit">Track</button></div>
+</form>
+</div>
+
+<aside class="card week" aria-labelledby="week-h">
+<div class="week-head">
+<h2 id="week-h">Closures this month</h2>
+<span class="tag warn">3 active</span>
+</div>
+<svg viewBox="0 0 640 300" role="img" aria-label="Schematic map preview of three closed roads in Areas A, B and C" class="week-map">
+<rect width="640" height="300" fill="#dfe9e6"/>
+<path d="M0 70H640M0 160H640M0 240H640M130 0V300M300 0V300M480 0V300M560 0V300" stroke="#fff" stroke-width="14" fill="none"/>
+<g fill="none" stroke-linecap="round" stroke-linejoin="round">
+<path d="M130 70V160H300V70" stroke="#0f766e" stroke-width="5" stroke-dasharray="9 7"/>
+<path d="M480 160H560V240H480" stroke="#0f766e" stroke-width="5" stroke-dasharray="9 7"/>
+<path d="M130 240V160" stroke="#0f766e" stroke-width="5" stroke-dasharray="9 7"/>
+<path d="M130 70H300M480 160V240M130 240H300" stroke="#d97706" stroke-width="10"/>
+</g>
+<g font-family="Public Sans, system-ui, sans-serif" font-size="15" font-weight="700" text-anchor="middle" fill="#fff">
+<circle cx="215" cy="42" r="15" fill="#14302d"/><text x="215" y="47">A</text>
+<circle cx="510" cy="200" r="15" fill="#14302d"/><text x="510" y="205">B</text>
+<circle cx="215" cy="272" r="15" fill="#14302d"/><text x="215" y="277">C</text>
+</g>
+</svg>
+<ul class="week-list">
+<li><span class="area">A</span><span><strong>Jalan Contoh 1</strong><small>2 Nov to 13 Nov</small></span></li>
+<li><span class="area">B</span><span><strong>Jalan Contoh 3</strong><small>9 Nov to 20 Nov</small></span></li>
+<li><span class="area">C</span><span><strong>Jalan Contoh 5</strong><small>16 Nov to 27 Nov</small></span></li>
+</ul>
+<a class="week-link" href="map.html">Open the full map with detours <span aria-hidden="true">→</span></a>
+</aside>
+</div></section>
+
+<section class="wrap quick" aria-label="Quick links">
+<div class="grid4">
+<a class="qcard" href="notices.html">
+<span class="qico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9a6 6 0 0112 0c0 5 2 6 2 6H4s2-1 2-6M10 19a2 2 0 004 0"/></svg></span>
+<strong>Notices</strong>
+<span>Announcements by area, type and date.</span>
+<span class="go" aria-hidden="true">→</span>
+</a>
+<a class="qcard" href="map.html">
+<span class="qico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6 7-11a7 7 0 10-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+<strong>Closure map</strong>
+<span>See closed roads and detours.</span>
+<span class="go" aria-hidden="true">→</span>
+</a>
+<a class="qcard" href="feedback.html">
+<span class="qico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg></span>
+<strong>Submit feedback</strong>
+<span>Report a concern with a photo and location.</span>
+<span class="go" aria-hidden="true">→</span>
+</a>
+<a class="qcard" href="track.html">
+<span class="qico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="M16 16l4 4"/></svg></span>
+<strong>Track a ticket</strong>
+<span>Check progress with your ticket number.</span>
+<span class="go" aria-hidden="true">→</span>
+</a>
+</div>
+</section>
+
+<section class="wrap">
+<div class="sec-head">
+<h2>Latest notices</h2>
+<a href="notices.html">All notices <span aria-hidden="true">→</span></a>
+</div>
+<div class="grid3">
+<article class="card notice warn">
+<span class="tag warn">Road closure</span>
+<h3>Lane closure on Jalan Contoh 1</h3>
+<p class="meta"><span>Area A</span><span>2 Nov to 13 Nov</span></p>
+<p>Detour via Jalan Contoh 2. Buses will stop one block earlier.</p>
+<a href="map.html">View on map</a>
+</article>
+<article class="card notice info">
+<span class="tag info">Pedestrian access</span>
+<h3>Pedestrian crossing moved</h3>
+<p class="meta"><span>Area B</span><span>From 5 Nov</span></p>
+<p>Use the signalised crossing near the Taman Contoh bus stop.</p>
+<a href="notices.html">Read notice</a>
+</article>
+<article class="card notice ok">
+<span class="tag ok">Business access</span>
+<h3>Shops on Lorong Contoh remain open</h3>
+<p class="meta"><span>Area C</span><span>Ongoing</span></p>
+<p>Customers can use the rear lane entrance during works.</p>
+<a href="notices.html">Read notice</a>
+</article>
+</div>
+</section>
+
+<section class="wrap">
+<div class="how">
+<h2>How it works</h2>
+<ol>
+<li><span class="num">1</span><strong>Check</strong><span>Read the latest notices and the closure map for your area.</span></li>
+<li><span class="num">2</span><strong>Tell us</strong><span>Report a problem and get a ticket number straight away.</span></li>
+<li><span class="num">3</span><strong>Follow</strong><span>Track your ticket from Submitted to Resolved.</span></li>
+</ol>
+<a class="btn light" href="feedback.html">Report a concern</a>
+</div>
+</section>
+
+<footer class="foot"><div>
+<span>MutiaraLink: community information and feedback platform</span>
+<nav class="foot-nav" aria-label="Footer"><a href="notices.html">Notices</a><a href="map.html">Closure map</a><a href="feedback.html">Feedback</a><a href="track.html">Track ticket</a></nav>
+</div></footer>
+<script src="js/app.js"></script>
+</body>
+</html>

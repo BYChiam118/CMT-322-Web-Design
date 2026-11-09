@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MutiaraLink Notices</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="notices">
+<header class="top"><div class="bar">
+<a class="brand" href="index.html"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b5f58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14.5" r=".8"/><circle cx="15" cy="14.5" r=".8"/><path d="M8 21l2-4M16 21l-2-4"/></svg><span>MutiaraLink</span></a>
+<nav class="nav" aria-label="Main">
+<a href="index.html">Home</a>
+<a href="notices.html" aria-current="page">Notices</a>
+<a href="map.html">Closure map</a>
+<a href="feedback.html">Feedback</a>
+<a href="track.html">Track ticket</a>
+</nav>
+<a class="btn ghost" href="dashboard.html">Staff login</a>
+</div></header>
+
+<section class="wrap" style="padding-bottom:8px">
+<h1 style="margin:0 0 8px;font-size:40px;letter-spacing:-0.02em">Construction notices</h1>
+<p style="margin:0 0 24px;font-size:18px;color:#33504c;max-width:640px;line-height:1.5">Road closures, pedestrian changes, schedules and business access updates for Mutiara Line works.</p>
+<div role="group" aria-label="Filter by area" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+<span style="font-weight:600;margin-right:4px">Area</span>
+<span id="chips" style="display:flex;flex-wrap:wrap;gap:10px"></span>
+</div>
+<p id="count" style="margin:20px 0 0;color:#4b5a57" aria-live="polite"></p>
+</section>
+
+<section class="wrap" style="padding-top:12px">
+<div id="list" class="grid2"></div>
+</section>
+
+<footer class="foot"><div></div></footer>
+<script src="js/app.js"></script>
+</body>
+</html>

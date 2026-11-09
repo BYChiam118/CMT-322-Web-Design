@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MutiaraLink Submit feedback</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="feedback">
+<header class="top"><div class="bar">
+<a class="brand" href="index.html"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b5f58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14.5" r=".8"/><circle cx="15" cy="14.5" r=".8"/><path d="M8 21l2-4M16 21l-2-4"/></svg><span>MutiaraLink</span></a>
+<nav class="nav" aria-label="Main">
+<a href="index.html">Home</a>
+<a href="notices.html">Notices</a>
+<a href="map.html">Closure map</a>
+<a href="feedback.html" aria-current="page">Feedback</a>
+<a href="track.html">Track ticket</a>
+</nav>
+<a class="btn ghost" href="dashboard.html">Staff login</a>
+</div></header>
+
+<section class="wrap" style="padding-bottom:8px">
+<h1 style="margin:0 0 8px;font-size:40px;letter-spacing:-0.02em">Submit feedback</h1>
+<p style="margin:0;font-size:18px;color:#33504c;max-width:640px;line-height:1.5">Tell the project team about a problem near you. You will get a ticket number to follow the reply.</p>
+</section>
+
+<section class="wrap" style="padding-top:20px;display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start">
+<div class="card" style="flex:2 1 560px;min-width:0">
+<div id="form-view">
+<form id="form" style="display:flex;flex-direction:column;gap:20px">
+<div class="row">
+<div class="field"><label for="cat">Category</label>
+<select id="cat"><option>Road closure</option><option>Pedestrian access</option><option>Noise or dust</option><option>Business access</option><option>Safety</option><option>Other</option></select></div>
+<div class="field"><label for="area">Area</label>
+<select id="area"><option>Area A</option><option>Area B</option><option>Area C</option></select></div>
+</div>
+<div class="field"><label for="loc">Location</label>
+<input id="loc" type="text" placeholder="For example, near Jalan Contoh 1 bus stop">
+<span class="hint">A road name or landmark helps staff find the problem.</span></div>
+<div class="field"><label for="desc">Describe the problem</label>
+<textarea id="desc" placeholder="What happened, and when?"></textarea></div>
+<div class="field"><label for="photo">Photo (optional)</label>
+<input id="photo" type="file" accept="image/*"></div>
+<div class="row">
+<div class="field"><label for="name">Name (optional)</label><input id="name" type="text"></div>
+<div class="field"><label for="email">Email for replies</label><input id="email" type="email" placeholder="you@example.com"></div>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:12px"><button type="button" id="send" class="btn">Submit feedback</button><a class="btn ghost" href="index.html">Cancel</a></div>
+</form>
+</div>
+<div id="done-view" role="status" hidden style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;align-items:center;gap:14px">
+<span style="flex:none;width:48px;height:48px;border-radius:50%;background:#0f766e;display:flex;align-items:center;justify-content:center"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg></span>
+<h2 style="margin:0;font-size:26px">Thank you, we have your feedback</h2>
+</div>
+<p style="margin:0;line-height:1.55">Your ticket number is below. Keep it to check progress.</p>
+<div style="background:#e3f2ef;border:1.5px solid #0f766e;border-radius:10px;padding:16px 20px;font-size:28px;font-weight:700;letter-spacing:0.04em;color:#083f3b">MUT-0001</div>
+<p style="margin:0;color:#4b5a57">Status: Submitted. Sample ticket for this prototype.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px"><a class="btn" href="track.html">Track this ticket</a><button type="button" id="again" class="btn ghost">Submit another</button></div>
+</div>
+</div>
+
+<aside class="card" style="flex:1 1 300px;min-width:0">
+<h2 style="margin:0 0 14px;font-size:20px">What happens next</h2>
+<ol style="margin:0;padding:0 0 0 20px;display:flex;flex-direction:column;gap:12px;line-height:1.5">
+<li>You receive a ticket number.</li>
+<li>Staff review your report and may reply.</li>
+<li>The status moves from Submitted to Under review, In progress and Resolved.</li>
+</ol>
+<p style="margin:18px 0 0;color:#4b5a57;line-height:1.5">In an emergency, call the emergency services. This form is not monitored around the clock.</p>
+</aside>
+</section>
+
+<footer class="foot"><div><span>MutiaraLink: community information and feedback platform</span></div></footer>
+<script src="js/app.js"></script>
+</body>
+</html>
