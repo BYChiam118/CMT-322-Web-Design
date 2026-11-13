@@ -3,81 +3,99 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MutiaraLink Closure map</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Closure map: MutiaraLink</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="map">
-<header class="top"><div class="bar">
-<a class="brand" href="index.html"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b5f58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14.5" r=".8"/><circle cx="15" cy="14.5" r=".8"/><path d="M8 21l2-4M16 21l-2-4"/></svg><span>MutiaraLink</span></a>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2v22" stroke="#1E2B2F" stroke-width="3"/><path d="M6 9h14M6 17h14" stroke="#1E2B2F" stroke-width="1.5"/><circle cx="13" cy="13" r="4" fill="#EEF2EE" stroke="#C62828" stroke-width="2.4"/></svg>MutiaraLink</a>
 <nav class="nav" aria-label="Main">
 <a href="index.html">Home</a>
 <a href="notices.html">Notices</a>
 <a href="map.html" aria-current="page">Closure map</a>
-<a href="feedback.html">Feedback</a>
-<a href="track.html">Track ticket</a>
+<a href="feedback.html">Report a problem</a>
+<a href="track.html">Track a ticket</a>
 </nav>
-<a class="btn ghost" href="dashboard.html">Staff login</a>
+<a class="staff" href="dashboard.html">Staff login</a>
 </div></header>
 
-<section class="wrap" style="padding-bottom:8px">
-<h1 style="margin:0 0 8px;font-size:40px;letter-spacing:-0.02em">Closure and detour map</h1>
-<p style="margin:0;font-size:18px;color:#33504c;max-width:640px;line-height:1.5">Pick a closure to see its dates and the detour to use.</p>
+<main id="main" class="wrap">
+<div class="sheet">
+<div class="sheet-notes">
+<h1 class="display">Closure map</h1>
+<p class="lead">Three closures on the route this month, two of them closed now. Pick one to see its detour.</p>
+
+<ul class="picks" id="closures" aria-label="Closures this month"></ul>
+
+<section class="selected" aria-labelledby="sel-road">
+<p class="sr-only" id="sel-announce" aria-live="polite"></p>
+<div class="marks-row"><span id="sel-status" class="status s-active">Closed now</span></div>
+<h2 id="sel-road"></h2>
+<p class="when" id="sel-when"></p>
+<p class="detour" id="sel-detour"></p>
+<svg id="inset" class="inset" viewBox="40 270 380 180" aria-hidden="true" focusable="false"><use href="#dwg-art"/></svg>
+<p id="sel-how"></p>
+<div class="actions"><a class="btn" id="sel-link" href="notices.html">Read the notice</a><a class="btn btn-secondary" id="sel-report" href="feedback.html">Report a problem here</a></div>
 </section>
-
-<section class="wrap" style="padding-top:20px;display:flex;flex-wrap:wrap;gap:24px;align-items:flex-start">
-<div style="flex:1 1 340px;max-width:420px;min-width:0;display:flex;flex-direction:column;gap:16px">
-<div id="closures" role="group" aria-label="Closures" style="display:flex;flex-direction:column;gap:10px"></div>
-<div class="card" aria-live="polite">
-<span class="tag warn">Closed</span>
-<h2 id="sel-name" style="margin:12px 0 4px;font-size:22px"></h2>
-<p id="sel-meta" style="margin:0 0 12px;color:#4b5a57"></p>
-<p style="margin:0 0 4px;font-weight:600">Detour</p>
-<p id="sel-detour" style="margin:0 0 16px;line-height:1.55"></p>
-<a href="notices.html" style="font-weight:600">Read the notice</a>
-</div>
 </div>
 
-<div style="flex:2 1 560px;min-width:0" class="card">
-<svg viewBox="0 0 640 460" role="img" aria-label="Schematic map of three closed roads in Areas A, B and C, each with a detour" style="width:100%;height:auto;display:block;border-radius:8px">
-<rect width="640" height="460" fill="#dfe9e6"/>
-<path d="M0 110H640M0 230H640M0 340H640M0 410H640M130 0V460M300 0V460M480 0V460M560 0V460" stroke="#ffffff" stroke-width="16" fill="none"/>
-<g font-family="Public Sans, system-ui, sans-serif" font-size="12" fill="#33504c">
-<text x="322" y="106">Jalan Contoh 1</text>
-<text x="322" y="226">Jalan Contoh 2</text>
-<text x="322" y="336">Jalan Contoh 5</text>
-<text x="322" y="406">Lorong Contoh</text>
-<text transform="rotate(-90 462 290)" x="462" y="290" text-anchor="middle">Jalan Contoh 3</text>
-<text transform="rotate(-90 572 290)" x="572" y="290" text-anchor="middle">Jalan Contoh 4</text>
+<figure class="sheet-drawing">
+<svg viewBox="0 0 420 640" role="img" aria-labelledby="dwg-t">
+<title id="dwg-t">Drawing of the route, north at the top, with each closure ringed in red and its detour dashed</title>
+<g id="dwg-art">
+<g font-family="Atkinson Hyperlegible Next, system-ui, sans-serif" font-size="15" fill="#5E6C70" text-anchor="middle"><text x="150" y="20">North</text><text x="150" y="636">South</text></g>
+<path d="M150 32V612" stroke="#1E2B2F" stroke-width="5"/>
+<g stroke="#1E2B2F" stroke-width="2"><path d="M140 80h22M140 170h22M140 330h22M140 430h22M140 520h22M140 585h22"/></g>
+<g class="road-labels" font-family="Atkinson Hyperlegible Next, system-ui, sans-serif" font-size="18" fill="#1E2B2F">
+<text id="t-mag" x="192" y="86">Jalan Magazine</text>
+<text id="t-glc" x="192" y="176">Gat Lebuh Cecil</text>
+<text id="t-jsas" x="192" y="336">Jalan Sultan Azlan Shah</text>
+<text id="t-tengah" x="192" y="436">Jalan Tengah</text>
+<text id="t-relau" x="192" y="526">Jalan Kampung Relau</text>
+<text id="t-tda" x="192" y="591">Jalan Tun Dr Awang</text>
 </g>
-<g fill="none" stroke-linecap="round" stroke-linejoin="round">
-<path id="det1" d="M130 110V230H300V110" stroke="#0f766e" stroke-width="6" stroke-dasharray="9 7"/>
-<path id="det2" d="M480 230H560V340H480" stroke="#0f766e" stroke-width="3" stroke-dasharray="9 7"/>
-<path id="det3" d="M130 340V410H300V340" stroke="#0f766e" stroke-width="3" stroke-dasharray="9 7"/>
-<path id="halo1" d="M130 110H300" stroke="#14302d" stroke-width="16" opacity="1"/>
-<path id="halo2" d="M480 230V340" stroke="#14302d" stroke-width="16" opacity="0"/>
-<path id="halo3" d="M130 340H300" stroke="#14302d" stroke-width="16" opacity="0"/>
-<path d="M130 110H300" stroke="#d97706" stroke-width="9"/>
-<path d="M480 230V340" stroke="#d97706" stroke-width="9"/>
-<path d="M130 340H300" stroke="#d97706" stroke-width="9"/>
+<g id="dwg-1" class="dwg-closure" data-id="1" fill="none" stroke-linejoin="round">
+<path class="over" d="M150 300V366" stroke="#C62828" stroke-width="7"/>
+<path class="detour-path" d="M150 286C62 298 62 420 150 430" stroke="#8A5A00" stroke-dasharray="7 5" stroke-linecap="round"/>
+<path class="cloud" stroke="#C62828" d="M126 292 a8 8 0 0 1 16 0 a8 8 0 0 1 16 0 a8 8 0 0 1 16 0 a6.835 6.835 0 0 1 0 13.67 a6.835 6.835 0 0 1 0 13.67 a6.835 6.835 0 0 1 0 13.67 a6.835 6.835 0 0 1 0 13.67 a6.835 6.835 0 0 1 0 13.67 a6.835 6.835 0 0 1 0 13.67 a8 8 0 0 1 -16 0 a8 8 0 0 1 -16 0 a8 8 0 0 1 -16 0 a6.835 6.835 0 0 1 0 -13.67 a6.835 6.835 0 0 1 0 -13.67 a6.835 6.835 0 0 1 0 -13.67 a6.835 6.835 0 0 1 0 -13.67 a6.835 6.835 0 0 1 0 -13.67 a6.835 6.835 0 0 1 0 -13.67z"/>
+<path class="mark" d="M196 280l14 24h-28z" stroke="#C62828" stroke-width="2"/>
+<text x="196" y="300" font-family="Atkinson Hyperlegible Next, system-ui, sans-serif" font-size="15" font-weight="800" fill="#C62828" stroke="none" text-anchor="middle">1</text>
 </g>
-<g font-family="Public Sans, system-ui, sans-serif" font-size="13" font-weight="700" text-anchor="middle" fill="#ffffff">
-<circle cx="215" cy="84" r="12" fill="#14302d"/><text x="215" y="89">A</text>
-<circle cx="508" cy="285" r="12" fill="#14302d"/><text x="508" y="290">B</text>
-<circle cx="215" cy="314" r="12" fill="#14302d"/><text x="215" y="319">C</text>
+<g id="dwg-2" class="dwg-closure" data-id="2" fill="none" stroke-linejoin="round">
+<path class="over" d="M150 64V98" stroke="#C62828" stroke-width="7"/>
+<path class="detour-path" d="M150 52C74 64 74 160 150 170" stroke="#8A5A00" stroke-dasharray="7 5" stroke-linecap="round"/>
+<path class="cloud" stroke="#C62828" d="M126 58 a8 8 0 0 1 16 0 a8 8 0 0 1 16 0 a8 8 0 0 1 16 0 a7.335 7.335 0 0 1 0 14.67 a7.335 7.335 0 0 1 0 14.67 a7.335 7.335 0 0 1 0 14.67 a8 8 0 0 1 -16 0 a8 8 0 0 1 -16 0 a8 8 0 0 1 -16 0 a7.335 7.335 0 0 1 0 -14.67 a7.335 7.335 0 0 1 0 -14.67 a7.335 7.335 0 0 1 0 -14.67z"/>
+<path class="mark" d="M196 34l14 24h-28z" stroke="#C62828" stroke-width="2"/>
+<text x="196" y="54" font-family="Atkinson Hyperlegible Next, system-ui, sans-serif" font-size="15" font-weight="800" fill="#C62828" stroke="none" text-anchor="middle">2</text>
+</g>
+<g id="dwg-3" class="dwg-closure is-upcoming" data-id="3" fill="none" stroke-linejoin="round">
+<path class="over" d="M150 562V598" stroke="#C62828" stroke-width="7"/>
+<path class="detour-path" d="M150 612C66 604 66 530 150 520" stroke="#8A5A00" stroke-dasharray="7 5" stroke-linecap="round"/>
+<path class="cloud" stroke="#C62828" d="M126 556 a8 8 0 0 1 16 0 a8 8 0 0 1 16 0 a8 8 0 0 1 16 0 a8 8 0 0 1 0 16 a8 8 0 0 1 0 16 a8 8 0 0 1 0 16 a8 8 0 0 1 -16 0 a8 8 0 0 1 -16 0 a8 8 0 0 1 -16 0 a8 8 0 0 1 0 -16 a8 8 0 0 1 0 -16 a8 8 0 0 1 0 -16z"/>
+<path class="mark" d="M196 544l14 24h-28z" stroke="#C62828" stroke-width="2"/>
+<text x="196" y="564" font-family="Atkinson Hyperlegible Next, system-ui, sans-serif" font-size="15" font-weight="800" fill="#C62828" stroke="none" text-anchor="middle">3</text>
+</g>
 </g>
 </svg>
-<div style="display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:14px;font-size:14px;color:#33504c;align-items:center">
-<span style="display:inline-flex;align-items:center;gap:8px"><svg width="30" height="10" viewBox="0 0 30 10" aria-hidden="true"><path d="M0 5H30" stroke="#d97706" stroke-width="9"/></svg>Closed road</span>
-<span style="display:inline-flex;align-items:center;gap:8px"><svg width="30" height="10" viewBox="0 0 30 10" aria-hidden="true"><path d="M0 5H30" stroke="#0f766e" stroke-width="4" stroke-dasharray="9 7"/></svg>Detour</span>
-<span style="display:inline-flex;align-items:center;gap:8px"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><circle cx="11" cy="11" r="10" fill="#14302d"/></svg>Area marker</span>
-<span style="margin-left:auto">Schematic map, not to scale</span>
-</div>
-</div>
-</section>
+<figcaption class="legend">
+<span><svg width="30" height="16" viewBox="0 0 30 16" aria-hidden="true"><path d="M3 8 a4 4 0 0 1 8 0 a4 4 0 0 1 8 0 a4 4 0 0 1 8 0" fill="none" stroke="#C62828" stroke-width="2"/></svg>Closed</span>
+<span><svg width="30" height="16" viewBox="0 0 30 16" aria-hidden="true"><path d="M3 8 a4 4 0 0 1 8 0 a4 4 0 0 1 8 0 a4 4 0 0 1 8 0" fill="none" stroke="#5E6C70" stroke-width="2" stroke-dasharray="3 3"/></svg>Starting soon</span>
+<span><svg width="30" height="16" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8H28" stroke="#8A5A00" stroke-width="2.4" stroke-dasharray="7 5"/></svg>Detour</span>
+</figcaption>
+</figure>
 
-<footer class="foot"><div><span>MutiaraLink: community information and feedback platform</span></div></footer>
+<dl class="titleblock">
+<div><dt>Updated</dt><dd>13 Nov 2026</dd></div>
+<div><dt>Drawing</dt><dd>Not to scale</dd></div>
+</dl>
+</div>
+</main>
+
+<footer class="foot"><div class="wrap">
+<span>MutiaraLink: roadworks, closures and feedback for the Mutiara Line</span>
+<nav aria-label="Footer"><a href="notices.html">Notices</a><a href="map.html">Closure map</a><a href="feedback.html">Report a problem</a><a href="track.html">Track a ticket</a></nav>
+</div></footer>
 <script src="js/app.js"></script>
 </body>
 </html>

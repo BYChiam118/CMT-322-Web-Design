@@ -3,65 +3,65 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MutiaraLink Notice</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Notice: MutiaraLink</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="notice">
-<header class="top"><div class="bar">
-<a class="brand" href="index.html"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b5f58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14.5" r=".8"/><circle cx="15" cy="14.5" r=".8"/><path d="M8 21l2-4M16 21l-2-4"/></svg><span>MutiaraLink</span></a>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2v22" stroke="#1E2B2F" stroke-width="3"/><path d="M6 9h14M6 17h14" stroke="#1E2B2F" stroke-width="1.5"/><circle cx="13" cy="13" r="4" fill="#EEF2EE" stroke="#C62828" stroke-width="2.4"/></svg>MutiaraLink</a>
 <nav class="nav" aria-label="Main">
 <a href="index.html">Home</a>
 <a href="notices.html" aria-current="page">Notices</a>
 <a href="map.html">Closure map</a>
-<a href="feedback.html">Feedback</a>
-<a href="track.html">Track ticket</a>
+<a href="feedback.html">Report a problem</a>
+<a href="track.html">Track a ticket</a>
 </nav>
-<a class="btn ghost" href="dashboard.html">Staff login</a>
+<a class="staff" href="dashboard.html">Staff login</a>
 </div></header>
 
-<section id="notfound" class="wrap" hidden>
-<div class="card" role="status" style="max-width:640px">
-<h1 style="margin:0 0 12px;font-size:32px">Notice not found</h1>
-<p style="margin:0 0 20px;line-height:1.55;color:#33504c">This notice may have been removed, or the link is incomplete.</p>
-<a class="btn" href="notices.html">Back to all notices</a>
-</div>
+<main id="main" class="wrap">
+<section id="notfound" class="page-head" hidden>
+<h1>Notice not found</h1>
+<p class="lead">This notice may have been removed, or the link is incomplete.</p>
+<div class="actions" style="margin-top:24px"><a class="btn" href="notices.html">See all notices</a></div>
 </section>
 
-<article id="notice" class="wrap" hidden style="max-width:860px">
-<nav aria-label="Breadcrumb" style="margin-bottom:20px;font-size:14px;color:#4b5a57"><a href="notices.html" style="font-weight:600">Notices</a> <span aria-hidden="true" style="margin:0 6px">›</span> <span id="crumb"></span></nav>
-<div id="tags" style="display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px"></div>
-<h1 id="title" style="margin:0 0 24px;font-size:clamp(28px,4.5vw,40px);letter-spacing:-0.02em"></h1>
+<article id="notice" class="notice-detail" hidden>
+<p class="crumb"><a href="notices.html">All notices</a></p>
+<h1 id="title" class="display notice-title"></h1>
+<div id="tags" class="marks-row notice-tags"></div>
 
-<div class="card" style="margin-bottom:20px">
-<dl style="margin:0;display:grid;grid-template-columns:minmax(120px,auto) 1fr;gap:12px 20px;line-height:1.5">
-<dt style="font-weight:600">Area</dt><dd id="f-area" style="margin:0"></dd>
-<dt style="font-weight:600">Affected roads</dt><dd id="f-roads" style="margin:0"></dd>
-<dt style="font-weight:600">Dates</dt><dd id="f-dates" style="margin:0"></dd>
-<dt style="font-weight:600">Working hours</dt><dd id="f-hours" style="margin:0"></dd>
-<dt style="font-weight:600">Last updated</dt><dd id="f-updated" style="margin:0"></dd>
+<section class="panel do-panel" aria-labelledby="do-h">
+<h2 id="do-h" class="headline">What you should do</h2>
+<p id="via" class="via" hidden></p>
+<p id="action"></p>
+</section>
+
+<dl class="facts notice-facts">
+<dt>Roads</dt><dd id="f-roads"></dd>
+<dt>Dates</dt><dd id="f-dates"></dd>
+<dt>Times</dt><dd id="f-hours"></dd>
+<dt>Area</dt><dd id="f-area"></dd>
+<dt>Last updated</dt><dd id="f-updated"></dd>
 </dl>
-</div>
 
-<section class="card" style="margin-bottom:20px">
-<h2 style="margin:0 0 10px;font-size:22px">What is changing</h2>
-<p id="details" style="margin:0;line-height:1.6;font-size:17px"></p>
+<section class="notice-body" aria-labelledby="what-h">
+<h2 id="what-h" class="headline">What is changing</h2>
+<p id="details"></p>
 </section>
 
-<section class="card" style="margin-bottom:28px;border-left:4px solid #0f766e">
-<h2 style="margin:0 0 10px;font-size:22px">What you should do</h2>
-<p id="action" style="margin:0;line-height:1.6;font-size:17px"></p>
-</section>
-
-<div style="display:flex;flex-wrap:wrap;gap:12px">
-<a class="btn" href="map.html">View on map</a>
-<a class="btn ghost" href="feedback.html">Report a problem</a>
-<a class="btn ghost" href="notices.html">Back to all notices</a>
+<div class="actions notice-actions">
+<a class="btn" id="map-link" href="map.html">See it on the closure map</a>
+<a class="btn btn-secondary" href="feedback.html">Report a problem</a>
 </div>
 </article>
+</main>
 
-<footer class="foot"><div><span>MutiaraLink: community information and feedback platform</span></div></footer>
+<footer class="foot"><div class="wrap">
+<span>MutiaraLink: roadworks, closures and feedback for the Mutiara Line</span>
+<nav aria-label="Footer"><a href="notices.html">Notices</a><a href="map.html">Closure map</a><a href="feedback.html">Report a problem</a><a href="track.html">Track a ticket</a></nav>
+</div></footer>
 <script src="js/notices-data.js"></script>
 <script src="js/notices.js"></script>
 </body>

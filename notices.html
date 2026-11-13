@@ -3,55 +3,58 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MutiaraLink Notices</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<title>Notices: MutiaraLink</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-page="notices">
-<header class="top"><div class="bar">
-<a class="brand" href="index.html"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b5f58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14.5" r=".8"/><circle cx="15" cy="14.5" r=".8"/><path d="M8 21l2-4M16 21l-2-4"/></svg><span>MutiaraLink</span></a>
+<a class="skip" href="#main">Skip to content</a>
+<header class="top"><div class="wrap">
+<a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2v22" stroke="#1E2B2F" stroke-width="3"/><path d="M6 9h14M6 17h14" stroke="#1E2B2F" stroke-width="1.5"/><circle cx="13" cy="13" r="4" fill="#EEF2EE" stroke="#C62828" stroke-width="2.4"/></svg>MutiaraLink</a>
 <nav class="nav" aria-label="Main">
 <a href="index.html">Home</a>
 <a href="notices.html" aria-current="page">Notices</a>
 <a href="map.html">Closure map</a>
-<a href="feedback.html">Feedback</a>
-<a href="track.html">Track ticket</a>
+<a href="feedback.html">Report a problem</a>
+<a href="track.html">Track a ticket</a>
 </nav>
-<a class="btn ghost" href="dashboard.html">Staff login</a>
+<a class="staff" href="dashboard.html">Staff login</a>
 </div></header>
 
-<section class="wrap" style="padding-bottom:8px">
-<h1 style="margin:0 0 8px;font-size:40px;letter-spacing:-0.02em">Construction notices</h1>
-<p style="margin:0 0 24px;font-size:18px;color:#33504c;max-width:640px;line-height:1.5">Road closures, pedestrian changes, schedules and business access updates for Mutiara Line works.</p>
+<main id="main">
+<div class="wrap page-head">
+<h1>Construction notices</h1>
+<p class="lead">Road closures, footpath changes, night works, bus stops and shop access along the Mutiara Line route. What is happening now comes first, urgent notices at the top.</p>
+</div>
 
-<form id="filters" class="card" style="display:flex;flex-direction:column;gap:18px">
-<div role="group" aria-label="Filter by area" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
-<span style="font-weight:600;margin-right:4px;min-width:52px">Area</span>
-<span id="chips" style="display:flex;flex-wrap:wrap;gap:10px"></span>
+<div class="wrap">
+<form id="filters" class="filters" role="search" aria-label="Filter notices">
+<div class="row search-row">
+<div class="field"><label for="q">Search</label><input id="q" type="search" placeholder="Road name, for example Jalan Tengah"></div>
+<div class="field field-btn"><button type="button" id="clear" class="btn btn-secondary">Clear filters</button></div>
 </div>
-<div role="group" aria-label="Filter by status" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
-<span style="font-weight:600;margin-right:4px;min-width:52px">Status</span>
-<span id="status-chips" style="display:flex;flex-wrap:wrap;gap:10px"></span>
+<details id="filter-more" class="filter-more" open>
+<summary>Filter by area, status and type<span id="filter-count"></span></summary>
+<div class="filter-body">
+<div class="chip-group" role="group" aria-labelledby="area-l"><span class="label" id="area-l">Area</span><span id="chips" class="chip-group"></span></div>
+<div class="chip-group" role="group" aria-labelledby="status-l"><span class="label" id="status-l">Status</span><span id="status-chips" class="chip-group"></span></div>
+<div class="field field-type"><label for="type">Type</label><select id="type"></select></div>
 </div>
-<div class="row" style="align-items:flex-end">
-<div class="field"><label for="type">Type</label><select id="type"></select></div>
-<div class="field" style="flex:2 1 280px"><label for="q">Search</label><input id="q" type="search" placeholder="Road name or notice title"></div>
-<div class="field" style="flex:0 0 auto"><button type="button" id="clear" class="btn ghost">Clear filters</button></div>
-</div>
+</details>
 </form>
-<p id="count" style="margin:20px 0 0;color:#4b5a57" aria-live="polite"></p>
-</section>
 
-<section class="wrap" style="padding-top:12px">
-<div id="list" class="grid2"></div>
-<div id="empty" class="card" hidden role="status" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
-<p style="margin:0;font-size:18px">No notices match your filters.</p>
-<button type="button" id="clear-empty" class="btn ghost">Clear filters</button>
+<p id="count" class="meta count" aria-live="polite"></p>
+<ul id="list" class="rows notice-list"></ul>
+<div id="empty" class="panel empty" hidden>
+<p>No notices match these filters.</p>
+<button type="button" id="clear-empty" class="btn btn-secondary">Clear filters</button>
 </div>
-</section>
+</div>
+</main>
 
-<footer class="foot"><div><span>MutiaraLink: community information and feedback platform</span></div></footer>
+<footer class="foot"><div class="wrap">
+<span>MutiaraLink: roadworks, closures and feedback for the Mutiara Line</span>
+<nav aria-label="Footer"><a href="notices.html">Notices</a><a href="map.html">Closure map</a><a href="feedback.html">Report a problem</a><a href="track.html">Track a ticket</a></nav>
+</div></footer>
 <script src="js/notices-data.js"></script>
 <script src="js/notices.js"></script>
 </body>
