@@ -24,18 +24,35 @@
 <section class="wrap" style="padding-bottom:8px">
 <h1 style="margin:0 0 8px;font-size:40px;letter-spacing:-0.02em">Construction notices</h1>
 <p style="margin:0 0 24px;font-size:18px;color:#33504c;max-width:640px;line-height:1.5">Road closures, pedestrian changes, schedules and business access updates for Mutiara Line works.</p>
+
+<form id="filters" class="card" style="display:flex;flex-direction:column;gap:18px">
 <div role="group" aria-label="Filter by area" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
-<span style="font-weight:600;margin-right:4px">Area</span>
+<span style="font-weight:600;margin-right:4px;min-width:52px">Area</span>
 <span id="chips" style="display:flex;flex-wrap:wrap;gap:10px"></span>
 </div>
+<div role="group" aria-label="Filter by status" style="display:flex;flex-wrap:wrap;gap:10px;align-items:center">
+<span style="font-weight:600;margin-right:4px;min-width:52px">Status</span>
+<span id="status-chips" style="display:flex;flex-wrap:wrap;gap:10px"></span>
+</div>
+<div class="row" style="align-items:flex-end">
+<div class="field"><label for="type">Type</label><select id="type"></select></div>
+<div class="field" style="flex:2 1 280px"><label for="q">Search</label><input id="q" type="search" placeholder="Road name or notice title"></div>
+<div class="field" style="flex:0 0 auto"><button type="button" id="clear" class="btn ghost">Clear filters</button></div>
+</div>
+</form>
 <p id="count" style="margin:20px 0 0;color:#4b5a57" aria-live="polite"></p>
 </section>
 
 <section class="wrap" style="padding-top:12px">
 <div id="list" class="grid2"></div>
+<div id="empty" class="card" hidden role="status" style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+<p style="margin:0;font-size:18px">No notices match your filters.</p>
+<button type="button" id="clear-empty" class="btn ghost">Clear filters</button>
+</div>
 </section>
 
-<footer class="foot"><div></div></footer>
-<script src="js/app.js"></script>
+<footer class="foot"><div><span>MutiaraLink: community information and feedback platform</span></div></footer>
+<script src="js/notices-data.js"></script>
+<script src="js/notices.js"></script>
 </body>
 </html>

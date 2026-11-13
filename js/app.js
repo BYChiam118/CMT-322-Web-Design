@@ -5,39 +5,6 @@
 
   var pages = {};
 
-  /* ---------- Notices: filter by area ---------- */
-  pages.notices = function () {
-    var area = 'All';
-    var notices = [
-      { title: 'Lane closure on Jalan Contoh 1', area: 'Area A', type: 'Road closure', tag: 'warn', dates: '2 Nov to 13 Nov', summary: 'Detour via Jalan Contoh 2. Buses will stop one block earlier.' },
-      { title: 'Pedestrian crossing moved', area: 'Area B', type: 'Pedestrian access', tag: 'info', dates: 'From 5 Nov', summary: 'Use the signalised crossing near the Taman Contoh bus stop.' },
-      { title: 'Shops on Lorong Contoh remain open', area: 'Area C', type: 'Business access', tag: 'ok', dates: 'Ongoing', summary: 'Customers can use the rear lane entrance during works.' },
-      { title: 'Night works on Jalan Contoh 3', area: 'Area A', type: 'Construction schedule', tag: 'info', dates: '9 Nov to 20 Nov', summary: 'Expect noise and dust. Water spraying will be used to limit dust.' },
-      { title: 'Temporary bus stop on Jalan Contoh 4', area: 'Area B', type: 'Public transport', tag: 'info', dates: 'From 2 Nov', summary: 'The stop moves to the next block until works finish.' },
-      { title: 'Jalan Contoh 5 closed to through traffic', area: 'Area C', type: 'Road closure', tag: 'warn', dates: '16 Nov to 27 Nov', summary: 'Local access only. Delivery vehicles should use Lorong Contoh.' }
-    ];
-    function render() {
-      $('#chips').innerHTML = ['All', 'Area A', 'Area B', 'Area C'].map(function (a) {
-        return '<button class="chip' + (a === area ? ' on' : '') + '" aria-pressed="' + (a === area) + '" data-area="' + a + '">' + a + '</button>';
-      }).join('');
-      var items = notices.filter(function (n) { return area === 'All' || n.area === area; });
-      $('#count').textContent = 'Showing ' + items.length + (items.length === 1 ? ' notice' : ' notices');
-      $('#list').innerHTML = items.map(function (n) {
-        return '<article class="card" style="display:flex;flex-direction:column;gap:8px">' +
-          '<div style="display:flex;flex-wrap:wrap;gap:8px;align-items:center"><span class="tag ' + n.tag + '">' + n.type + '</span><span style="color:#4b5a57;font-size:14px">' + n.area + '</span></div>' +
-          '<h2 style="margin:4px 0 0;font-size:21px">' + n.title + '</h2>' +
-          '<p style="margin:0;font-weight:600;color:#33504c">' + n.dates + '</p>' +
-          '<p style="margin:0;line-height:1.55">' + n.summary + '</p>' +
-          '<div style="margin-top:8px"><a href="map.html" style="font-weight:600">View on map</a></div></article>';
-      }).join('');
-    }
-    $('#chips').addEventListener('click', function (e) {
-      var b = e.target.closest('button[data-area]');
-      if (b) { area = b.getAttribute('data-area'); render(); }
-    });
-    render();
-  };
-
   /* ---------- Closure map: select a closure ---------- */
   pages.map = function () {
     var closures = [
