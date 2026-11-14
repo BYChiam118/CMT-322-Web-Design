@@ -8,8 +8,13 @@
 </head>
 <body data-page="home">
 <a class="skip" href="#main">Skip to content</a>
+<div class="util"><div class="wrap">
+<a class="btn btn-util" href="feedback.html">Report a problem</a>
+<span class="util-note">Penang LRT Mutiara Line: closures, detours and feedback</span>
+<span class="util-links"><a href="dashboard.html">Staff login</a></span>
+</div></div>
 <header class="top"><div class="wrap">
-<a class="brand" href="index.html"><svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2v22" stroke="#1E2B2F" stroke-width="3"/><path d="M6 9h14M6 17h14" stroke="#1E2B2F" stroke-width="1.5"/><circle cx="13" cy="13" r="4" fill="#EEF2EE" stroke="#C62828" stroke-width="2.4"/></svg>MutiaraLink</a>
+<a class="brand" href="index.html"><svg width="34" height="34" viewBox="0 0 26 26" aria-hidden="true"><path d="M13 2v22" stroke="#26449A" stroke-width="3"/><path d="M6 9h14M6 17h14" stroke="#26449A" stroke-width="1.5"/><circle cx="13" cy="13" r="4.2" fill="#FFFFFF" stroke="#19A88D" stroke-width="2.6"/></svg>MutiaraLink</a>
 <nav class="nav" aria-label="Main">
 <a href="index.html" aria-current="page">Home</a>
 <a href="notices.html">Notices</a>
@@ -17,113 +22,91 @@
 <a href="feedback.html">Report a problem</a>
 <a href="track.html">Track a ticket</a>
 </nav>
-<a class="staff" href="dashboard.html">Staff login</a>
 </div></header>
 
-<main id="main" class="wrap">
-<div class="sheet">
-<div class="sheet-notes">
-<section class="answer" aria-labelledby="answer-h">
-<svg class="tri" viewBox="0 0 36 32" aria-hidden="true"><path d="M18 2L34 30H2z"/><text x="18" y="26" text-anchor="middle">1</text></svg>
-<div>
-<h1 id="answer-h">Closed today: <span class="nowrap">Jalan Sultan Azlan Shah</span> eastbound, until 20 Nov.</h1>
+<main id="main">
+<section class="hero" aria-labelledby="answer-h">
+<img class="hero-photo" src="images/hero-komtar.jpg" alt="Aerial view of George Town with the Komtar tower and the cleared site of the future Komtar LRT station" width="1920" height="1440">
+<div class="wrap">
+<div class="hero-text">
+<div class="marks-row"><span class="status s-urgent">Urgent</span><span class="status s-active">Closed now</span></div>
+<h1 id="answer-h">Closed today: Jalan Sultan Azlan Shah eastbound, until 20 Nov.</h1>
 <p class="detour">Detour: use Jalan Tengah. Allow about 10 extra minutes.</p>
-<p class="more">Westbound stays open, and homes and shops can be reached on foot. <a href="notice.html?id=1">Read the notice</a></p>
+<p class="more">Westbound stays open, and homes and shops can be reached on foot.</p>
+<div class="actions"><a class="btn btn-light" href="map.html?closure=1">See it on the closure map</a><a class="btn btn-ghost-light" href="notice.html?id=1">Read the notice</a></div>
 </div>
+</div>
+<p class="photo-credit">Photo: <a href="https://commons.wikimedia.org/wiki/File:Komtar_LRT_station_site_January_2025.jpg">HundenvonPenang</a>, CC BY-SA 4.0</p>
 </section>
 
-<h2 class="notes-h">Also on the route this month</h2>
-<ol class="marks">
-<li><svg class="tri" viewBox="0 0 36 32" aria-hidden="true"><path d="M18 2L34 30H2z"/><text x="18" y="26" text-anchor="middle">2</text></svg><strong><a href="map.html?closure=2">Jalan Magazine slip road</a></strong><span>Closed on weekends, 14 Nov to 29 Nov</span><span class="via">Detour via Gat Lebuh Cecil</span><span class="access">The footpath on the far side stays open.</span></li>
-<li><svg class="tri" viewBox="0 0 36 32" aria-hidden="true"><path d="M18 2L34 30H2z"/><text x="18" y="26" text-anchor="middle">3</text></svg><strong><a href="map.html?closure=3">Jalan Tun Dr Awang</a></strong><span>Starts 16 Nov: closed to through traffic until 27 Nov</span><span class="via">Detour via Jalan Kampung Relau</span><span class="access">Homes and shops: enter from the Jalan Kampung Relau end.</span></li>
-</ol>
-<div class="to-map"><a class="btn btn-secondary" href="map.html">Open the closure map</a></div>
-
+<section class="ticket-strip" aria-label="Check a ticket">
+<div class="wrap">
+<p>Reported a problem? Check its status.</p>
 <form class="inline-form" action="track.html" method="get">
-<label for="q-tid">Reported a problem? Check your ticket.</label>
+<label for="q-tid" class="sr-only">Ticket number</label>
 <div><input id="q-tid" class="ref" name="tid" type="text" placeholder="MUT-0001" autocomplete="off" spellcheck="false" aria-describedby="q-hint"><button class="btn" type="submit">Check status</button></div>
 <span class="hint" id="q-hint">Your ticket number looks like MUT-0001.</span>
 </form>
 </div>
-
-<figure class="sheet-drawing">
-<svg viewBox="0 0 420 640" role="group" aria-labelledby="dwg-t">
-<title id="dwg-t">Drawing of the route, north at the top, with each closure marked in red and its detour dashed</title>
-<g font-family="Atkinson Hyperlegible Next, system-ui, sans-serif" font-size="15" fill="#5E6C70" text-anchor="middle" aria-hidden="true"><text x="150" y="20">North</text><text x="150" y="636">South</text></g>
-<path d="M150 32V612" stroke="#1E2B2F" stroke-width="5"/>
-<g stroke="#1E2B2F" stroke-width="2"><path d="M140 80h22M140 170h22M140 330h22M140 430h22M140 520h22M140 585h22"/></g>
-<g font-family="Atkinson Hyperlegible Next, system-ui, sans-serif" font-size="18" fill="#1E2B2F" aria-hidden="true">
-<text x="192" y="86" font-weight="700">Jalan Magazine</text>
-<text x="192" y="176">Gat Lebuh Cecil</text>
-<text x="192" y="336" font-weight="700">Jalan Sultan Azlan Shah</text>
-<text x="192" y="436">Jalan Tengah</text>
-<text x="192" y="526">Jalan Kampung Relau</text>
-<text x="192" y="591" font-weight="700">Jalan Tun Dr Awang</text>
-</g>
-<a href="map.html?closure=1" aria-label="1: Jalan Sultan Azlan Shah, closed eastbound until 20 Nov, detour via Jalan Tengah">
-<g fill="none" stroke-linejoin="round">
-<path d="M150 300V366" stroke="#C62828" stroke-width="7"/>
-<path d="M150 286C62 298 62 420 150 430" stroke="#8A5A00" stroke-width="2.4" stroke-dasharray="7 5" stroke-linecap="round"/>
-<path class="cloud" stroke="#C62828" stroke-width="2.2" d="M126 292 a8 8 0 0 1 16 0 a8 8 0 0 1 16 0 a8 8 0 0 1 16 0 a6.835 6.835 0 0 1 0 13.67 a6.835 6.835 0 0 1 0 13.67 a6.835 6.835 0 0 1 0 13.67 a6.835 6.835 0 0 1 0 13.67 a6.835 6.835 0 0 1 0 13.67 a6.835 6.835 0 0 1 0 13.67 a8 8 0 0 1 -16 0 a8 8 0 0 1 -16 0 a8 8 0 0 1 -16 0 a6.835 6.835 0 0 1 0 -13.67 a6.835 6.835 0 0 1 0 -13.67 a6.835 6.835 0 0 1 0 -13.67 a6.835 6.835 0 0 1 0 -13.67 a6.835 6.835 0 0 1 0 -13.67 a6.835 6.835 0 0 1 0 -13.67z"/>
-<path d="M196 280l14 24h-28z" stroke="#C62828" stroke-width="2"/>
-</g>
-<text x="196" y="300" font-family="Atkinson Hyperlegible Next, system-ui, sans-serif" font-size="15" font-weight="800" fill="#C62828" text-anchor="middle">1</text>
-</a>
-<a href="map.html?closure=2" aria-label="2: Jalan Magazine slip road, closed on weekends, detour via Gat Lebuh Cecil">
-<g fill="none" stroke-linejoin="round">
-<path d="M150 64V98" stroke="#C62828" stroke-width="7"/>
-<path d="M150 52C74 64 74 160 150 170" stroke="#8A5A00" stroke-width="2.4" stroke-dasharray="7 5" stroke-linecap="round"/>
-<path class="cloud" stroke="#C62828" stroke-width="2.2" d="M126 58 a8 8 0 0 1 16 0 a8 8 0 0 1 16 0 a8 8 0 0 1 16 0 a7.335 7.335 0 0 1 0 14.67 a7.335 7.335 0 0 1 0 14.67 a7.335 7.335 0 0 1 0 14.67 a8 8 0 0 1 -16 0 a8 8 0 0 1 -16 0 a8 8 0 0 1 -16 0 a7.335 7.335 0 0 1 0 -14.67 a7.335 7.335 0 0 1 0 -14.67 a7.335 7.335 0 0 1 0 -14.67z"/>
-<path d="M196 34l14 24h-28z" stroke="#C62828" stroke-width="2"/>
-</g>
-<text x="196" y="54" font-family="Atkinson Hyperlegible Next, system-ui, sans-serif" font-size="15" font-weight="800" fill="#C62828" text-anchor="middle">2</text>
-</a>
-<a href="map.html?closure=3" aria-label="3: Jalan Tun Dr Awang, closed to through traffic from 16 Nov to 27 Nov, detour via Jalan Kampung Relau">
-<g class="dwg-closure is-upcoming" fill="none" stroke-linejoin="round">
-<path class="over" d="M150 562V598" stroke="#C62828" stroke-width="7"/>
-<path d="M150 612C66 604 66 530 150 520" stroke="#8A5A00" stroke-width="2.4" stroke-dasharray="7 5" stroke-linecap="round"/>
-<path class="cloud" stroke="#C62828" stroke-width="2.2" d="M126 556 a8 8 0 0 1 16 0 a8 8 0 0 1 16 0 a8 8 0 0 1 16 0 a8 8 0 0 1 0 16 a8 8 0 0 1 0 16 a8 8 0 0 1 0 16 a8 8 0 0 1 -16 0 a8 8 0 0 1 -16 0 a8 8 0 0 1 -16 0 a8 8 0 0 1 0 -16 a8 8 0 0 1 0 -16 a8 8 0 0 1 0 -16z"/>
-<path d="M196 544l14 24h-28z" stroke="#C62828" stroke-width="2"/>
-</g>
-<text x="196" y="564" font-family="Atkinson Hyperlegible Next, system-ui, sans-serif" font-size="15" font-weight="800" fill="#C62828" text-anchor="middle">3</text>
-</a>
-</svg>
-<figcaption class="legend">
-<span><svg width="30" height="16" viewBox="0 0 30 16" aria-hidden="true"><path d="M3 8 a4 4 0 0 1 8 0 a4 4 0 0 1 8 0 a4 4 0 0 1 8 0" fill="none" stroke="#C62828" stroke-width="2"/></svg>Closed</span>
-<span><svg width="30" height="16" viewBox="0 0 30 16" aria-hidden="true"><path d="M3 8 a4 4 0 0 1 8 0 a4 4 0 0 1 8 0 a4 4 0 0 1 8 0" fill="none" stroke="#5E6C70" stroke-width="2" stroke-dasharray="3 3"/></svg>Starting soon</span>
-<span><svg width="30" height="16" viewBox="0 0 30 16" aria-hidden="true"><path d="M2 8H28" stroke="#8A5A00" stroke-width="2.4" stroke-dasharray="7 5"/></svg>Detour</span>
-</figcaption>
-</figure>
-
-<dl class="titleblock">
-<div><dt>Updated</dt><dd>13 Nov 2026</dd></div>
-<div><dt>Drawing</dt><dd>Not to scale</dd></div>
-</dl>
-</div>
-
-<section class="section" aria-labelledby="latest-h">
-<div class="section-head"><h2 id="latest-h">Other notices this month</h2><a href="notices.html">All notices</a></div>
-<ul class="rows">
-<li><p class="meta">Construction schedule, South section</p><h3><a href="notice.html?id=4">Night works on Jalan Kampung Relau</a></h3><p class="meta">9 Nov to 20 Nov, 9pm to 5am. Expect noise and dust at night.</p></li>
-<li><p class="meta">Business access, North section</p><h3><a href="notice.html?id=3">Shops on Gat Lebuh Cecil stay open</a></h3><p class="meta">Until 31 Dec. Every shop is open through the rear lane.</p></li>
-<li><p class="meta">Public transport, North section</p><h3><a href="notice.html?id=5">Temporary bus stop on Jalan Magazine</a></h3><p class="meta">Until 15 Dec. The stop has moved one block east.</p></li>
-</ul>
 </section>
 
-<section class="section" aria-labelledby="report-h">
-<div class="section-head"><h2 id="report-h">Something wrong near you?</h2></div>
-<ul class="rows steps">
+<section class="wrap section" aria-labelledby="also-h">
+<div class="section-head"><h2 id="also-h">Also on the route this month</h2></div>
+<div class="closure-grid">
+<article class="card closure-card reveal">
+<svg class="tri" viewBox="0 0 36 32" aria-hidden="true"><path d="M18 2L34 30H2z"/><text x="18" y="26" text-anchor="middle">2</text></svg>
+<div class="marks-row"><span class="status s-active">Closed this weekend</span></div>
+<h3><a href="map.html?closure=2">Jalan Magazine slip road</a></h3>
+<p class="meta" style="margin:0">Weekends, 14 Nov to 29 Nov</p>
+<p class="via" style="margin:0">Detour via Gat Lebuh Cecil</p>
+<p style="margin:0">The footpath on the far side stays open.</p>
+</article>
+<article class="card closure-card reveal">
+<svg class="tri" viewBox="0 0 36 32" aria-hidden="true"><path d="M18 2L34 30H2z"/><text x="18" y="26" text-anchor="middle">3</text></svg>
+<div class="marks-row"><span class="status s-upcoming">Starts 16 Nov</span></div>
+<h3><a href="map.html?closure=3">Jalan Tun Dr Awang</a></h3>
+<p class="meta" style="margin:0">Closed to through traffic, 16 Nov to 27 Nov</p>
+<p class="via" style="margin:0">Detour via Jalan Kampung Relau</p>
+<p style="margin:0">Homes and shops: enter from the Jalan Kampung Relau end.</p>
+</article>
+</div>
+<p style="margin:32px 0 0"><a class="more-link" href="map.html">Open the closure map</a></p>
+</section>
+
+<section class="wrap section" aria-labelledby="latest-h">
+<div class="section-head"><h2 id="latest-h">Other notices this month</h2></div>
+<div class="notice-cards">
+<article class="card reveal"><div class="marks-row"><span class="status s-active">Active</span><span class="meta">Construction schedule, South section</span></div><h3><a href="notice.html?id=4">Night works on Jalan Kampung Relau</a></h3><p class="meta">9 Nov to 20 Nov, 9pm to 5am. Expect noise and dust at night.</p></article>
+<article class="card reveal"><div class="marks-row"><span class="status s-active">Active</span><span class="meta">Business access, North section</span></div><h3><a href="notice.html?id=3">Shops on Gat Lebuh Cecil stay open</a></h3><p class="meta">Until 31 Dec. Every shop is open through the rear lane.</p></article>
+<article class="card reveal"><div class="marks-row"><span class="status s-active">Active</span><span class="meta">Public transport, North section</span></div><h3><a href="notice.html?id=5">Temporary bus stop on Jalan Magazine</a></h3><p class="meta">Until 15 Dec. The stop has moved one block east.</p></article>
+</div>
+<p style="margin:32px 0 0"><a class="more-link" href="notices.html">See all notices</a></p>
+</section>
+
+<section class="section split-band" aria-labelledby="report-h">
+<div class="wrap split">
+<figure class="split-photo reveal" style="margin:0">
+<img src="images/lrt-hoarding.jpg" alt="Red and white barriers around an LRT Mutiara Line work site, with a sign apologising for the inconvenience" width="1200" height="900" loading="lazy">
+<figcaption>Photo: <a href="https://commons.wikimedia.org/wiki/File:LRT_Mutiara_Line_(Under_Construction).jpg">LEE 003</a>, CC BY 4.0</figcaption>
+</figure>
+<div>
+<h2 id="report-h" class="caps">Something wrong near you?</h2>
+<ol class="steps">
 <li><strong>Tell the project team.</strong> Noise, dust, a blocked footpath, a shop people cannot reach.</li>
 <li><strong>Keep your ticket number.</strong> You get one as soon as you send the report.</li>
 <li><strong>Follow it to the end.</strong> The ticket moves from Submitted to Resolved, with replies from staff.</li>
-</ul>
-<div class="actions" style="margin-top:20px"><a class="btn" href="feedback.html">Report a problem</a><a class="btn btn-secondary" href="track.html">Track a ticket</a></div>
+</ol>
+<div class="actions" style="margin-top:28px"><a class="btn" href="feedback.html">Report a problem</a><a class="btn btn-secondary" href="track.html">Track a ticket</a></div>
+</div>
+</div>
 </section>
 </main>
 
 <footer class="foot"><div class="wrap">
 <span>MutiaraLink: roadworks, closures and feedback for the Mutiara Line</span>
 <nav aria-label="Footer"><a href="notices.html">Notices</a><a href="map.html">Closure map</a><a href="feedback.html">Report a problem</a><a href="track.html">Track a ticket</a></nav>
+<p class="credits">Photos from Wikimedia Commons: Komtar LRT station site by HundenvonPenang (CC BY-SA 4.0); LRT Mutiara Line under construction by LEE 003 (CC BY 4.0).</p>
 </div></footer>
+<script src="js/reveal.js"></script>
 </body>
 </html>

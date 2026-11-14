@@ -19,7 +19,9 @@ A clickable demo of the Penang LRT Mutiara Line community information and feedba
 
 ## Folder
 - `css/style.css`: shared styles
-- `fonts/`: Atkinson Hyperlegible Next and Mono (woff2, SIL Open Font License in `fonts/OFL.txt`)
+- `fonts/`: PT Sans (woff2, SIL Open Font License in `fonts/PT-Sans-OFL.txt`)
+- `images/`: home page photos from Wikimedia Commons (credits below)
+- `js/reveal.js`: scroll fade-in for the home page cards (visual only)
 - `js/app.js`: closure map, feedback, ticket tracking and dashboard, with the ticket data
 - `js/notices-data.js`: shared notices (`NOTICES`)
 - `js/notices.js`: notices list filters and notice details page
@@ -27,3 +29,9 @@ A clickable demo of the Penang LRT Mutiara Line community information and feedba
 ## Notes
 - Road names are real roads on the Mutiara Line route. Closures, dates, notices and tickets are made up for the demo. Nothing is saved.
 - Not built yet: Business directory, Register / Login.
+
+## Photo credits
+- `images/hero-komtar.jpg`: "Komtar LRT station site January 2025" by HundenvonPenang, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Komtar_LRT_station_site_January_2025.jpg (resized)
+- `images/lrt-hoarding.jpg`: "LRT Mutiara Line (Under Construction)" by LEE 003, CC BY 4.0, https://commons.wikimedia.org/wiki/File:LRT_Mutiara_Line_(Under_Construction).jpg (resized)
+
+The visual style takes its palette and layout cues from the MRT Corp public website. MutiaraLink is a student prototype and is not connected to MRT Corp.
