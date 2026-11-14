@@ -1,0 +1,165 @@
+/* =========================================================
+   MutiaraLink prototype: shared styles for every page.
+   Colours: teal for actions and links, amber for closures and
+   warnings, red only for urgent items.
+   ========================================================= */
+
+/* ---------- Basics ---------- */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: #14302d;
+  background: #f4f7f6;
+  line-height: 1.5;
+}
+h1, h2, h3 { line-height: 1.2; }
+a { color: #0b5f58; }
+a:hover { color: #083f3b; }
+:focus-visible { outline: 3px solid #0f766e; outline-offset: 2px; }
+[hidden] { display: none !important; }   /* makes the hidden attribute always win */
+
+.wrap { max-width: 1200px; margin: 0 auto; padding: 32px 24px; }
+.meta { color: #4b5a57; font-size: 14px; }
+.lead { font-size: 18px; color: #33504c; max-width: 680px; margin: 0; }
+.page-title { margin: 0 0 8px; font-size: 40px; letter-spacing: -0.02em; }
+
+/* "Skip to content" link: hidden until a keyboard user tabs to it */
+.skip { position: absolute; left: 16px; top: -100px; background: #14302d; color: #fff; padding: 10px 16px; font-weight: 600; }
+.skip:focus { top: 8px; color: #fff; }
+
+/* Thin bar at the very top saying this is demo data */
+.demo-bar { background: #14302d; color: #e7f1ef; font-size: 14px; text-align: center; padding: 6px 16px; }
+
+/* ---------- Header and navigation ---------- */
+.top { background: #fff; border-bottom: 1px solid #d5e0dd; }
+.bar { max-width: 1200px; margin: 0 auto; padding: 12px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 32px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 20px; color: #0b5f58; text-decoration: none; }
+.nav { display: flex; flex-wrap: wrap; gap: 4px; flex: 1; }
+.nav a { padding: 0 14px; border-radius: 8px; color: #14302d; text-decoration: none; font-weight: 500; min-height: 44px; display: inline-flex; align-items: center; }
+.nav a:hover { background: #e7f1ef; }
+.nav a[aria-current] { background: #d3ebe7; color: #083f3b; font-weight: 700; }
+
+/* ---------- Buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 20px; border-radius: 8px; background: #0f766e; color: #fff; font: inherit; font-weight: 600; text-decoration: none; border: 0; cursor: pointer; }
+.btn:hover { background: #0b5f58; color: #fff; }
+.btn.ghost { background: #fff; color: #0b5f58; border: 1.5px solid #0f766e; }
+.btn.ghost:hover { background: #e7f1ef; color: #083f3b; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+
+/* ---------- Cards and grids ---------- */
+.card { background: #fff; border: 1px solid #d5e0dd; border-radius: 12px; padding: 24px; }
+.card h2, .card h3 { margin: 0 0 8px; }
+.card p { margin: 0 0 10px; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: 16px; }
+.grid3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 16px; }
+.grid4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px; }
+.two-col { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; }
+.two-col > .main { flex: 2 1 560px; min-width: 0; }
+.two-col > .side { flex: 1 1 300px; min-width: 0; }
+.section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 16px; }
+.section-head h2 { margin: 0; font-size: 28px; }
+
+/* Quick-link cards on the home page */
+.qcard { display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: #14302d; background: #fff; border: 1px solid #d5e0dd; border-radius: 12px; padding: 20px; }
+.qcard:hover { border-color: #0f766e; background: #f0f8f6; color: #14302d; }
+
+/* ---------- Tags (small coloured labels) ---------- */
+.tag { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; white-space: nowrap; }
+.tag.urgent    { background: #fee2e2; color: #991b1b; }   /* urgent notice */
+.tag.active    { background: #fef3c7; color: #7c3a06; }   /* happening now / under review */
+.tag.upcoming  { background: #dbeafe; color: #1e40af; }   /* starting soon / in progress */
+.tag.completed,
+.tag.grey      { background: #e5e7eb; color: #1f2937; }   /* finished / just submitted */
+.tag.ok        { background: #d1fae5; color: #065f46; }   /* resolved */
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 8px; }
+
+/* Numbered circle used for closures (matches the numbers on the map) */
+.num { flex: none; width: 30px; height: 30px; border-radius: 50%; background: #14302d; color: #fff; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
+
+/* ---------- Home page: today's closure ---------- */
+.answer { background: #fffaeb; border: 1.5px solid #e8cf86; border-radius: 12px; padding: 28px; }
+.answer h1 { margin: 12px 0; font-size: 36px; letter-spacing: -0.02em; }
+.answer .detour { font-size: 20px; font-weight: 700; color: #0b5f58; margin: 0 0 8px; }
+.closure-card { display: flex; gap: 14px; align-items: flex-start; }
+.steps { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 12px; }
+.steps li { display: flex; gap: 12px; align-items: flex-start; }
+
+/* ---------- Notices ---------- */
+.filters { display: flex; flex-direction: column; gap: 16px; }
+.filter-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.filter-label { font-weight: 600; min-width: 60px; }
+.chip { min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1.5px solid #9db8b3; background: #fff; color: #14302d; font: inherit; font-weight: 500; cursor: pointer; }
+.chip:hover { background: #e7f1ef; }
+.chip.on { background: #0f766e; border-color: #0f766e; color: #fff; font-weight: 600; }
+.notice-card h2 { font-size: 21px; }
+.notice-card h2 a { color: #14302d; }
+.dates { font-weight: 600; color: #33504c; }
+.detour-line { font-weight: 600; color: #0b5f58; }
+.small-link { font-weight: 600; }
+
+/* Notice details */
+.do-panel { background: #e3f2ef; border: 1.5px solid #0f766e; border-radius: 12px; padding: 24px; margin: 24px 0; }
+.do-panel h2 { margin: 0 0 10px; font-size: 22px; }
+.facts { display: grid; grid-template-columns: auto 1fr; gap: 10px 24px; margin: 0; }
+.facts dt { font-weight: 600; }
+.facts dd { margin: 0; }
+
+/* ---------- Closure map ---------- */
+.item { display: flex; align-items: center; gap: 12px; text-align: left; width: 100%; min-height: 44px; padding: 12px 14px; border-radius: 10px; border: 1.5px solid #c3d4d0; background: #fff; color: #14302d; font: inherit; cursor: pointer; }
+.item:hover { background: #eef6f4; }
+.item.on { border-color: #0f766e; background: #e3f2ef; box-shadow: inset 4px 0 0 #0f766e; }
+.item { flex-wrap: wrap; }
+.item-text { display: flex; flex-direction: column; flex: 1 1 140px; }
+.map-svg { width: 100%; max-width: 460px; height: auto; display: block; margin: 0 auto; }
+.legend { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 14px; font-size: 14px; color: #33504c; align-items: center; }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+
+/* Each closure on the drawing is a <g class="closure">.
+   The dark outline and thicker detour appear only on the selected one. */
+.closure { cursor: pointer; }
+.closure .halo { opacity: 0; }
+.closure .detour { stroke-width: 3; }
+.closure.selected .halo { opacity: 1; }
+.closure.selected .detour { stroke-width: 5; }
+
+/* ---------- Forms ---------- */
+.form { display: flex; flex-direction: column; gap: 20px; }
+.row { display: flex; flex-wrap: wrap; gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.row > .field { flex: 1 1 240px; }   /* side by side only when inside a .row */
+.field label { font-weight: 600; }
+.field input, .field select, .field textarea { width: 100%; min-height: 44px; padding: 10px 12px; border: 1.5px solid #7f9c97; border-radius: 8px; background: #fff; color: #14302d; font: inherit; }
+.field textarea { min-height: 130px; resize: vertical; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: 3px solid #99d5cd; border-color: #0f766e; }
+.field .invalid { border-color: #b91c1c; }
+.hint { font-size: 14px; color: #4b5a57; }
+.error { font-size: 14px; color: #b91c1c; font-weight: 600; }
+.note { background: #fef3c7; color: #5c2d05; border-radius: 8px; padding: 10px 14px; font-weight: 600; }
+.ticket-box { background: #e3f2ef; border: 1.5px solid #0f766e; border-radius: 10px; padding: 16px 20px; font-size: 28px; font-weight: 700; letter-spacing: 0.04em; color: #083f3b; }
+.success { background: #d1fae5; color: #065f46; border-radius: 10px; padding: 14px 16px; margin-bottom: 16px; }
+
+/* ---------- Ticket progress steps ---------- */
+.progress { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 20px 0; }
+.step { flex: 1 1 150px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+.step .line { display: flex; align-items: center; }
+.step .rule { flex: 1; height: 4px; background: #0f766e; border-radius: 2px; }
+.step .rule.off { background: #c3d4d0; }
+.dot { flex: none; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.dot.done { background: #0f766e; }
+.dot.now { background: #fff; border: 5px solid #0f766e; }
+.dot.next { background: #e3ebe9; border: 2px solid #9db8b3; }
+.replies { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.reply { border-left: 4px solid #0f766e; padding: 2px 0 2px 16px; }
+.reply-from { font-weight: 600; }
+.reply p { margin: 4px 0 0; }
+
+/* ---------- Staff table ---------- */
+.table-box { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; min-width: 560px; }
+th, td { padding: 12px 10px; text-align: left; border-bottom: 1px solid #e1e9e7; }
+th { font-size: 14px; color: #4b5a57; font-weight: 600; }
+
+/* ---------- Footer ---------- */
+.foot { border-top: 1px solid #d5e0dd; background: #fff; margin-top: 40px; }
+.foot div { max-width: 1200px; margin: 0 auto; padding: 20px 24px; font-size: 14px; color: #4b5a57; display: flex; flex-wrap: wrap; gap: 8px 24px; }

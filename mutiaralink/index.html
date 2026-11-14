@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MutiaraLink | Roadworks on the Mutiara Line route</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="home">
+<a class="skip" href="#main">Skip to content</a>
+
+
+<!-- ===== Header (same on every page) ===== -->
+<header class="top"><div class="bar">
+  <a class="brand" href="index.html"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b5f58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14.5" r=".8"/><circle cx="15" cy="14.5" r=".8"/><path d="M8 21l2-4M16 21l-2-4"/></svg><span>MutiaraLink</span></a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="notices.html">Notices</a>
+    <a href="map.html">Closure map</a>
+    <a href="feedback.html">Report a problem</a>
+    <a href="track.html">Track a ticket</a>
+  </nav>
+  <a class="btn ghost" href="dashboard.html">Staff login</a>
+</div></header>
+
+<main id="main">
+<!-- Today's closure comes first: it is the main reason people open the site.
+     The text matches closure 1 in js/data.js. -->
+<section class="wrap two-col" style="padding-top:40px">
+  <div class="main answer">
+    <div class="tag-row"><span class="tag urgent">Urgent</span><span class="tag active">Closed now</span></div>
+    <h1>Closed today: Jalan Sultan Azlan Shah eastbound, until 20 Nov.</h1>
+    <p class="detour">Detour: use Jalan Tengah. Allow about 10 extra minutes.</p>
+    <p>Westbound stays open, and homes and shops can be reached on foot.</p>
+    <div class="actions">
+      <a class="btn" href="map.html?closure=1">See it on the closure map</a>
+      <a class="btn ghost" href="notice.html?id=1">Read the notice</a>
+    </div>
+  </div>
+
+  <!-- Quick ticket check: sends the number to track.html?tid=... -->
+  <div class="side card">
+    <h2 style="font-size:20px">Reported a problem?</h2>
+    <form class="form" action="track.html" method="get" style="gap:12px">
+      <div class="field">
+        <label for="home-tid">Ticket number</label>
+        <input id="home-tid" name="tid" type="text" placeholder="MUT-0001" autocomplete="off">
+      </div>
+      <button class="btn" type="submit">Check status</button>
+    </form>
+    <hr style="border:0;border-top:1px solid #d5e0dd;margin:24px 0">
+    <h2 style="font-size:20px">Something wrong near you?</h2>
+    <ol class="steps">
+      <li><span class="num">1</span><span><strong>Tell us</strong> about noise, dust or a blocked footpath.</span></li>
+      <li><span class="num">2</span><span><strong>Keep</strong> the ticket number you get.</span></li>
+      <li><span class="num">3</span><span><strong>Follow</strong> it from Submitted to Resolved.</span></li>
+    </ol>
+    <div class="actions"><a class="btn ghost" href="feedback.html">Report a problem</a></div>
+  </div>
+</section>
+
+<!-- The other closures this month (closures 2 and 3 in js/data.js) -->
+<section class="wrap" style="padding-top:8px">
+  <div class="section-head"><h2>Also on the route this month</h2><a href="map.html">Open the closure map</a></div>
+  <div class="grid2">
+    <article class="card closure-card">
+      <span class="num">2</span>
+      <div>
+        <div class="tag-row"><span class="tag active">Closed this weekend</span></div>
+        <h3><a href="map.html?closure=2">Jalan Magazine slip road</a></h3>
+        <p class="dates">Weekends, 14 Nov to 29 Nov</p>
+        <p class="detour-line">Detour via Gat Lebuh Cecil</p>
+        <p class="meta">The footpath on the far side stays open.</p>
+      </div>
+    </article>
+    <article class="card closure-card">
+      <span class="num">3</span>
+      <div>
+        <div class="tag-row"><span class="tag upcoming">Starts 16 Nov</span></div>
+        <h3><a href="map.html?closure=3">Jalan Tun Dr Awang</a></h3>
+        <p class="dates">Closed to through traffic, 16 Nov to 27 Nov</p>
+        <p class="detour-line">Detour via Jalan Kampung Relau</p>
+        <p class="meta">Homes and shops: enter from the Jalan Kampung Relau end.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- Quick links to the main pages -->
+<section class="wrap" style="padding-top:8px">
+  <div class="grid4">
+    <a class="qcard" href="notices.html"><strong style="font-size:18px">Notices</strong><span class="meta">Every announcement, by area, type and date.</span></a>
+    <a class="qcard" href="map.html"><strong style="font-size:18px">Closure map</strong><span class="meta">Closed roads and their detours.</span></a>
+    <a class="qcard" href="feedback.html"><strong style="font-size:18px">Report a problem</strong><span class="meta">Get a ticket number straight away.</span></a>
+    <a class="qcard" href="track.html"><strong style="font-size:18px">Track a ticket</strong><span class="meta">See progress and staff replies.</span></a>
+  </div>
+</section>
+
+<!-- Other notices (notices 4, 3 and 5 in js/data.js) -->
+<section class="wrap" style="padding-top:8px">
+  <div class="section-head"><h2>Other notices this month</h2><a href="notices.html">All notices</a></div>
+  <div class="grid3">
+    <article class="card">
+      <div class="tag-row"><span class="tag active">Active</span><span class="meta">Construction schedule</span></div>
+      <h3><a href="notice.html?id=4">Night works on Jalan Kampung Relau</a></h3>
+      <p class="meta">9 Nov to 20 Nov, 9pm to 5am. Expect noise and dust at night.</p>
+    </article>
+    <article class="card">
+      <div class="tag-row"><span class="tag active">Active</span><span class="meta">Business access</span></div>
+      <h3><a href="notice.html?id=3">Shops on Gat Lebuh Cecil stay open</a></h3>
+      <p class="meta">Until 31 Dec. Every shop is open through the rear lane.</p>
+    </article>
+    <article class="card">
+      <div class="tag-row"><span class="tag active">Active</span><span class="meta">Public transport</span></div>
+      <h3><a href="notice.html?id=5">Temporary bus stop on Jalan Magazine</a></h3>
+      <p class="meta">Until 15 Dec. The stop has moved one block east.</p>
+    </article>
+  </div>
+</section>
+</main>
+
+<!-- ===== Footer (same on every page) ===== -->
+<footer class="foot"><div>
+  <span>MutiaraLink: roadworks, closures and feedback for the Penang LRT Mutiara Line</span>
+ 
+</div></footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notice | MutiaraLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="notice">
+<a class="skip" href="#main">Skip to content</a>
+
+
+<!-- ===== Header (same on every page) ===== -->
+<header class="top"><div class="bar">
+  <a class="brand" href="index.html"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b5f58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14.5" r=".8"/><circle cx="15" cy="14.5" r=".8"/><path d="M8 21l2-4M16 21l-2-4"/></svg><span>MutiaraLink</span></a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="notices.html" aria-current="page">Notices</a>
+    <a href="map.html">Closure map</a>
+    <a href="feedback.html">Report a problem</a>
+    <a href="track.html">Track a ticket</a>
+  </nav>
+  <a class="btn ghost" href="dashboard.html">Staff login</a>
+</div></header>
+
+<main id="main">
+<section class="wrap">
+  <p><a href="notices.html">&larr; All notices</a></p>
+
+  <!-- Shown when the id in the address bar does not match a notice -->
+  <div id="not-found" class="card" hidden>
+    <h1 style="margin-top:0">Notice not found</h1>
+    <p>This notice may have been removed, or the link is incomplete.</p>
+    <a class="btn" href="notices.html">See all notices</a>
+  </div>
+
+  <!-- Filled in by setupNoticeDetailPage() in js/app.js -->
+  <article id="notice" hidden>
+    <div id="tags" class="tag-row"></div>
+    <h1 id="title" class="page-title"></h1>
+
+    <div class="do-panel">
+      <h2>What you should do</h2>
+      <p id="detour" class="detour-line" hidden></p>
+      <p id="action" style="margin:0"></p>
+    </div>
+
+    <div class="two-col">
+      <div class="main card">
+        <h2 style="font-size:22px">What is changing</h2>
+        <p id="details"></p>
+      </div>
+      <dl class="side card facts">
+        <dt>Roads</dt><dd id="roads"></dd>
+        <dt>Dates</dt><dd id="dates"></dd>
+        <dt>Times</dt><dd id="hours"></dd>
+        <dt>Area</dt><dd id="area"></dd>
+        <dt>Last updated</dt><dd id="updated"></dd>
+      </dl>
+    </div>
+
+    <div class="actions">
+      <a class="btn" id="map-link" href="map.html">See it on the closure map</a>
+      <a class="btn ghost" href="feedback.html">Report a problem</a>
+    </div>
+  </article>
+</section>
+</main>
+
+<!-- ===== Footer (same on every page) ===== -->
+<footer class="foot"><div>
+  <span>MutiaraLink: roadworks, closures and feedback for the Penang LRT Mutiara Line</span>
+  
+</div></footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

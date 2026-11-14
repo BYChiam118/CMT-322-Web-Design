@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Track a ticket | MutiaraLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="track">
+<a class="skip" href="#main">Skip to content</a>
+
+
+<!-- ===== Header (same on every page) ===== -->
+<header class="top"><div class="bar">
+  <a class="brand" href="index.html"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b5f58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14.5" r=".8"/><circle cx="15" cy="14.5" r=".8"/><path d="M8 21l2-4M16 21l-2-4"/></svg><span>MutiaraLink</span></a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="notices.html">Notices</a>
+    <a href="map.html">Closure map</a>
+    <a href="feedback.html">Report a problem</a>
+    <a href="track.html" aria-current="page">Track a ticket</a>
+  </nav>
+  <a class="btn ghost" href="dashboard.html">Staff login</a>
+</div></header>
+
+<main id="main">
+<section class="wrap" style="padding-bottom:8px">
+  <p id="back-staff" hidden><a href="dashboard.html">&larr; Back to the staff dashboard</a></p>
+  <h1 class="page-title">Track a ticket</h1>
+  <p class="lead">Enter the ticket number you got when you reported the problem.</p>
+  <form id="lookup" class="card row" style="margin-top:24px;align-items:flex-end">
+    <div class="field">
+      <label for="tid">Ticket number</label>
+      <input id="tid" type="text" placeholder="MUT-0001" autocomplete="off">
+      <span class="hint">Try MUT-0001 to MUT-0005. You can type just the digits, like 2.</span>
+    </div>
+    <button type="submit" class="btn">Check status</button>
+  </form>
+</section>
+
+<section class="wrap" style="padding-top:8px">
+  <div id="not-found" class="card" role="status" hidden>
+    <h2 style="margin-top:0">No ticket <span id="not-found-id"></span></h2>
+    <p>Check the number in your confirmation. It starts with MUT- and has four digits.</p>
+  </div>
+
+  <!-- Filled in by setupTrackPage() in js/app.js -->
+  <div id="result" hidden aria-live="polite">
+    <div class="card">
+      <div class="section-head"><h2 id="r-id" style="font-size:24px"></h2><span id="r-status" class="tag"></span></div>
+      <ol id="r-steps" class="progress" aria-label="Ticket progress"></ol>
+    </div>
+    <div class="two-col" style="margin-top:20px">
+      <div class="main card">
+        <h2 style="font-size:20px">Replies from staff</h2>
+        <ul id="r-replies" class="replies"></ul>
+      </div>
+      <div class="side card">
+        <h2 style="font-size:20px">Your report</h2>
+        <dl class="facts">
+          <dt>About</dt><dd id="r-about"></dd>
+          <dt>Where</dt><dd id="r-where"></dd>
+          <dt>Sent</dt><dd id="r-sent"></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== Footer (same on every page) ===== -->
+<footer class="foot"><div>
+  <span>MutiaraLink: roadworks, closures and feedback for the Penang LRT Mutiara Line</span>
+
+</div></footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

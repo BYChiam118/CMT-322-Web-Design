@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Report a problem | MutiaraLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="feedback">
+<a class="skip" href="#main">Skip to content</a>
+
+
+<!-- ===== Header (same on every page) ===== -->
+<header class="top"><div class="bar">
+  <a class="brand" href="index.html"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b5f58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14.5" r=".8"/><circle cx="15" cy="14.5" r=".8"/><path d="M8 21l2-4M16 21l-2-4"/></svg><span>MutiaraLink</span></a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="notices.html">Notices</a>
+    <a href="map.html">Closure map</a>
+    <a href="feedback.html" aria-current="page">Report a problem</a>
+    <a href="track.html">Track a ticket</a>
+  </nav>
+  <a class="btn ghost" href="dashboard.html">Staff login</a>
+</div></header>
+
+<main id="main">
+<section class="wrap" style="padding-bottom:8px">
+  <h1 class="page-title">Report a problem</h1>
+  <p class="lead">Tell the project team about noise, dust, a blocked footpath or anything else near the works. You get a ticket number straight away, so you can follow the reply.</p>
+</section>
+
+<section class="wrap two-col" style="padding-top:16px">
+  <div class="main card">
+    <!-- The form (checked by setupFeedbackPage() in js/app.js) -->
+    <div id="form-view">
+      <form id="form" class="form" novalidate>
+        <div class="row">
+          <div class="field">
+            <label for="category">What is it about?</label>
+            <select id="category">
+              <option value="">Choose one</option>
+              <option>Road closure</option>
+              <option>Pedestrian access</option>
+              <option>Noise or dust</option>
+              <option>Business access</option>
+              <option>Safety</option>
+              <option>Something else</option>
+            </select>
+            <span class="error" id="category-error" hidden>Choose what the problem is about.</span>
+            <span class="note" id="safety-note" hidden>If someone is in danger now, call 999 first.</span>
+          </div>
+          <div class="field">
+            <label for="area">Which part of the route?</label>
+            <select id="area">
+              <option value="">Not sure</option>
+              <option value="North section">North: Jalan Magazine, Gat Lebuh Cecil</option>
+              <option value="Middle section">Middle: Jalan Sultan Azlan Shah, Jalan Tengah</option>
+              <option value="South section">South: Jalan Kampung Relau, Jalan Tun Dr Awang</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="location">Where is it?</label>
+          <input id="location" type="text" placeholder="For example, near the Jalan Tengah bus stop">
+          <span class="hint">A road name or landmark helps staff find it.</span>
+        </div>
+        <div class="field">
+          <label for="description">What happened?</label>
+          <textarea id="description" placeholder="What did you see or hear, and when?"></textarea>
+          <span class="error" id="description-error" hidden>Describe the problem so staff know what to look for.</span>
+        </div>
+        <div class="field">
+          <label for="photo">Photo (optional)</label>
+          <input id="photo" type="file" accept="image/*">
+        </div>
+        <div class="row">
+          <div class="field"><label for="name">Your name (optional)</label><input id="name" type="text" autocomplete="name"></div>
+          <div class="field">
+            <label for="email">Email for replies (optional)</label>
+            <input id="email" type="email" autocomplete="email" placeholder="you@example.com">
+            <span class="hint">Without an email, check replies with your ticket number.</span>
+          </div>
+        </div>
+        <div class="actions" style="margin:0">
+          <button type="submit" class="btn">Send report</button>
+          <a class="btn ghost" href="index.html">Cancel</a>
+        </div>
+      </form>
+    </div>
+
+    <!-- Shown after sending -->
+    <div id="done-view" role="status" hidden>
+      <h2 style="margin-top:0">Report sent. Keep your ticket number.</h2>
+      <p>Use it to check progress and read replies from staff.</p>
+      <div class="ticket-box">MUT-0006</div>
+      <p class="meta" style="margin-top:10px">Status: <span class="tag grey">Submitted</span></p>
+      <div class="actions">
+        <a class="btn" id="track-new" href="track.html?tid=MUT-0006">Track this ticket</a>
+        <button type="button" id="again" class="btn ghost">Report another problem</button>
+      </div>
+    </div>
+  </div>
+
+  <aside class="side card">
+    <p class="note" style="margin-top:0">In an emergency, call 999. This form is not watched around the clock.</p>
+    <h2 style="font-size:20px">What happens next</h2>
+    <ol class="steps">
+      <li><span class="tag grey">Submitted</span><span>You get a ticket number.</span></li>
+      <li><span class="tag active">Under review</span><span>Staff read your report and may reply.</span></li>
+      <li><span class="tag upcoming">In progress</span><span>The site team is acting on it.</span></li>
+      <li><span class="tag ok">Resolved</span><span>Staff explain what was done.</span></li>
+    </ol>
+  </aside>
+</section>
+</main>
+
+<!-- ===== Footer (same on every page) ===== -->
+<footer class="foot"><div>
+  <span>MutiaraLink: roadworks, closures and feedback for the Penang LRT Mutiara Line</span>
+  
+</div></footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

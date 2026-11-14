@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Closure map | MutiaraLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="map">
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo-bar">Prototype with sample data. Road names are real, but these closures, dates and tickets are made up.</div>
+
+<!-- ===== Header (same on every page) ===== -->
+<header class="top"><div class="bar">
+  <a class="brand" href="index.html"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b5f58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14.5" r=".8"/><circle cx="15" cy="14.5" r=".8"/><path d="M8 21l2-4M16 21l-2-4"/></svg><span>MutiaraLink</span></a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="notices.html">Notices</a>
+    <a href="map.html" aria-current="page">Closure map</a>
+    <a href="feedback.html">Report a problem</a>
+    <a href="track.html">Track a ticket</a>
+  </nav>
+  <a class="btn ghost" href="dashboard.html">Staff login</a>
+</div></header>
+
+<main id="main">
+<section class="wrap" style="padding-bottom:8px">
+  <h1 class="page-title">Closure map</h1>
+  <p class="lead">Three closures on the route this month. Pick one in the list or on the drawing to see its detour.</p>
+</section>
+
+<section class="wrap two-col" style="padding-top:16px">
+  <!-- Left: list of closures (built by setupMapPage() in js/app.js) and the chosen one's details -->
+  <div class="side" style="display:flex;flex-direction:column;gap:16px">
+    <div id="closure-list" style="display:flex;flex-direction:column;gap:10px" aria-label="Closures this month"></div>
+    <div class="card" aria-live="polite">
+      <span id="sel-status" class="tag active"></span>
+      <h2 id="sel-road" style="margin:12px 0 4px;font-size:22px"></h2>
+      <p id="sel-when" class="meta"></p>
+      <p style="margin:0 0 4px;font-weight:600">Detour</p>
+      <p id="sel-detour" class="detour-line"></p>
+      <p id="sel-access"></p>
+      <div class="actions">
+        <a class="btn" id="sel-notice" href="notices.html">Read the notice</a>
+        <a class="btn ghost" id="sel-report" href="feedback.html">Report a problem here</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right: drawing of the route -->
+  <figure class="main card" style="margin:0">
+    <svg class="map-svg" viewBox="0 0 420 640" role="img" aria-label="Drawing of the route from north to south, with three closures and their detours">
+      <rect width="420" height="640" rx="12" fill="#dfe9e6"/>
+      <g font-size="14" fill="#4b5a57" text-anchor="middle"><text x="150" y="22">North</text><text x="150" y="632">South</text></g>
+      <!-- The route and its cross streets -->
+      <path d="M150 32V612" stroke="#ffffff" stroke-width="16"/>
+      <path d="M150 32V612" stroke="#9db8b3" stroke-width="2"/>
+      <g stroke="#14302d" stroke-width="2"><path d="M140 80h22M140 170h22M140 330h22M140 430h22M140 520h22M140 585h22"/></g>
+      <g font-size="17" fill="#14302d">
+        <text x="182" y="86">Jalan Magazine</text>
+        <text x="182" y="176">Gat Lebuh Cecil</text>
+        <text x="182" y="336">Jalan Sultan Azlan Shah</text>
+        <text x="182" y="436">Jalan Tengah</text>
+        <text x="182" y="526">Jalan Kampung Relau</text>
+        <text x="182" y="591">Jalan Tun Dr Awang</text>
+      </g>
+      <!-- The three closures -->
+      <g class="closure" data-id="1">
+        <path class="halo" d="M150 300V366" stroke="#14302d" stroke-width="18" fill="none"/>
+        <path class="detour" d="M150 286C62 298 62 420 150 430" stroke="#0f766e" stroke-dasharray="8 6" fill="none" stroke-linecap="round"/>
+        <path d="M150 300V366" stroke="#d97706" stroke-width="9" fill="none"/>
+        <circle cx="118" cy="333" r="13" fill="#14302d"/>
+        <text x="118" y="338" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">1</text>
+      </g>
+      <g class="closure" data-id="2">
+        <path class="halo" d="M150 64V98" stroke="#14302d" stroke-width="18" fill="none"/>
+        <path class="detour" d="M150 52C74 64 74 160 150 170" stroke="#0f766e" stroke-dasharray="8 6" fill="none" stroke-linecap="round"/>
+        <path d="M150 64V98" stroke="#d97706" stroke-width="9" fill="none"/>
+        <circle cx="118" cy="110" r="13" fill="#14302d"/>
+        <text x="118" y="115" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">2</text>
+      </g>
+      <g class="closure" data-id="3">
+        <path class="halo" d="M150 562V598" stroke="#14302d" stroke-width="18" fill="none"/>
+        <path class="detour" d="M150 612C66 604 66 530 150 520" stroke="#0f766e" stroke-dasharray="8 6" fill="none" stroke-linecap="round"/>
+        <path d="M150 562V598" stroke="#d97706" stroke-width="9" fill="none" stroke-dasharray="7 5"/>
+        <circle cx="118" cy="568" r="13" fill="#14302d"/>
+        <text x="118" y="573" text-anchor="middle" font-size="14" font-weight="700" fill="#ffffff">3</text>
+      </g>
+    </svg>
+    <figcaption class="legend">
+      <span><svg width="30" height="10" aria-hidden="true"><path d="M0 5H30" stroke="#d97706" stroke-width="9"/></svg>Closed now</span>
+      <span><svg width="30" height="10" aria-hidden="true"><path d="M0 5H30" stroke="#d97706" stroke-width="9" stroke-dasharray="7 5"/></svg>Starting soon</span>
+      <span><svg width="30" height="10" aria-hidden="true"><path d="M0 5H30" stroke="#0f766e" stroke-width="4" stroke-dasharray="8 6"/></svg>Detour</span>
+      <span>Drawing not to scale</span>
+    </figcaption>
+  </figure>
+</section>
+</main>
+
+<!-- ===== Footer (same on every page) ===== -->
+<footer class="foot"><div>
+  <span>MutiaraLink: roadworks, closures and feedback for the Penang LRT Mutiara Line</span>
+
+</div></footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

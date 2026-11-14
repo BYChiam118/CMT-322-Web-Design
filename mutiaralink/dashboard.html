@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Staff dashboard | MutiaraLink</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="dashboard">
+<a class="skip" href="#main">Skip to content</a>
+
+
+<!-- ===== Header (same on every page) ===== -->
+<header class="top"><div class="bar">
+  <a class="brand" href="index.html"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0b5f58" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="14" rx="3"/><path d="M5 11h14"/><circle cx="9" cy="14.5" r=".8"/><circle cx="15" cy="14.5" r=".8"/><path d="M8 21l2-4M16 21l-2-4"/></svg><span>MutiaraLink</span></a>
+  <nav class="nav" aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="notices.html">Notices</a>
+    <a href="map.html">Closure map</a>
+    <a href="feedback.html">Report a problem</a>
+    <a href="track.html">Track a ticket</a>
+  </nav>
+  <div class="actions" style="margin:0;align-items:center"><span class="meta">Signed in as Contractor team (sample)</span><a class="btn ghost" href="index.html">Log out</a></div>
+</div></header>
+
+<main id="main">
+<section class="wrap" style="padding-bottom:8px">
+  <span class="tag upcoming">Staff view</span>
+  <h1 class="page-title" style="margin-top:8px">Staff dashboard</h1>
+  <p class="lead">Review tickets from the public and publish notices.</p>
+</section>
+
+<section class="wrap two-col" style="padding-top:16px">
+  <!-- Tickets table (built by setupDashboardPage() in js/app.js) -->
+  <div class="main card">
+    <h2 style="font-size:22px">Tickets</h2>
+    <div id="status-chips" class="filter-row" role="group" aria-label="Show tickets by status" style="margin-bottom:16px"></div>
+    <div class="table-box">
+      <table>
+        <thead><tr><th scope="col">Ticket</th><th scope="col">About</th><th scope="col">Part of route</th><th scope="col">Status</th><th scope="col">Sent</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Publish a notice (sample only) -->
+  <div class="side card">
+    <h2 style="font-size:22px">Publish a notice</h2>
+    <div id="published" class="success" role="status" hidden>
+      <strong>Notice published (sample).</strong><br>
+      <span id="published-title"></span><br>
+      <span id="published-meta" class="meta"></span>
+    </div>
+    <form id="notice-form" class="form" novalidate style="gap:16px">
+      <div class="field">
+        <label for="notice-title">Title</label>
+        <input id="notice-title" type="text" placeholder="For example, lane closure on Jalan Tengah">
+        <span class="error" id="notice-title-error" hidden>Add a title so people know what the notice is about.</span>
+      </div>
+      <div class="field">
+        <label for="notice-area">Part of the route</label>
+        <select id="notice-area">
+          <option value="North section">North: Jalan Magazine, Gat Lebuh Cecil</option>
+          <option value="Middle section">Middle: Jalan Sultan Azlan Shah, Jalan Tengah</option>
+          <option value="South section">South: Jalan Kampung Relau, Jalan Tun Dr Awang</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="notice-type">Type</label>
+        <select id="notice-type">
+          <option>Road closure</option>
+          <option>Pedestrian access</option>
+          <option>Construction schedule</option>
+          <option>Business access</option>
+          <option>Public transport</option>
+        </select>
+      </div>
+      <div class="row">
+        <div class="field" style="flex-basis:140px"><label for="notice-start">Start date</label><input id="notice-start" type="date"></div>
+        <div class="field" style="flex-basis:140px"><label for="notice-end">End date</label><input id="notice-end" type="date"></div>
+      </div>
+      <div class="field"><label for="notice-message">Message</label><textarea id="notice-message" placeholder="What is changing, and what should people do?"></textarea></div>
+      <div><button type="submit" class="btn">Publish notice</button></div>
+    </form>
+  </div>
+</section>
+</main>
+
+<!-- ===== Footer (same on every page) ===== -->
+<footer class="foot"><div>
+  <span>MutiaraLink: roadworks, closures and feedback for the Penang LRT Mutiara Line</span>
+
+</div></footer>
+
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
